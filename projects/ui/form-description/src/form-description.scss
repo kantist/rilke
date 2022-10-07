@@ -1,0 +1,11 @@
+:host {
+	display: block;
+	position: absolute;
+	font-size: 0.7rem;
+	margin-top: 5px;
+
+	.error {
+		line-height: 0.7rem;
+		color: var(--error-color);
+	}
+}

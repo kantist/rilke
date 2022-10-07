@@ -1,0 +1,13 @@
+<div class="wrapper">
+	<div class="page-item" [ngClass]="{ disabled: pageNum === 1 }">
+		<a class="page-link pr-4 pl-4" (click)="firstPage()">{{ firstText }}</a>
+	</div>
+	<!-- TODO pagination max page number yapılmadı geçiştirildi -->
+	<div class="page-item" [ngClass]="{ active: pageNum === page }" *ngFor="let page of dynamicPages">
+		<a class="page-link" (click)="changePage(page)">{{ page }}</a>
+	</div>
+
+	<div class="page-item" [ngClass]="{ disabled: pageNum === getLast() }">
+		<a class="page-link pr-4 pl-4" (click)="lastPage()">{{ lastText }}</a>
+	</div>
+</div>

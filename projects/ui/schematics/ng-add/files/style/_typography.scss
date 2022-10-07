@@ -1,0 +1,87 @@
+/* stylelint-disable custom-property-pattern */
+@use 'sass:math';
+
+$f-family: 'Trenda Regular', 'Helvetica Neue', 'Noto Sans', sans-serif;
+$base-size: 1rem;
+$base-weight: 400;
+
+$font: (
+	family: $f-family,
+	size: (
+		xs: math.div($base-size, 2),
+		sm: math.div($base-size, 1.5),
+		md: $base-size,
+		lg: $base-size * 1.5,
+		xl: $base-size * 2,
+	),
+	weight: (
+		xs: $base-weight - 200,
+		sm: $base-weight - 100,
+		md: $base-weight,
+		lg: $base-weight + 100,
+		xl: $base-weight + 200,
+	),
+	lh: (
+		xs: math.div($base-size, 2),
+		sm: math.div($base-size, 1.5),
+		md: $base-size,
+		lg: $base-size * 1.5,
+		xl: $base-size * 2,
+	),
+);
+
+@mixin ril-typography() {
+	:root {
+		@each $key, $value in $font {
+			@if type-of($value) != 'map' {
+				--font-#{$key}: #{$value};
+			} @else if type-of($value) == 'map' {
+				@each $nk, $nv in $value {
+					--font-#{$key}-#{$nk}: #{$nv};
+				}
+			}
+		}
+	}
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font: inherit;
+}
+
+h1 {
+	font-size: var(--font-size-xl);
+	margin-bottom: 0;
+}
+
+h2 {
+	font-size: var(--font-size-xl);
+	margin-bottom: 0;
+}
+
+h3 {
+	font-size: var(--font-size-lg);
+	margin-bottom: 0;
+}
+
+h4 {
+	font-size: var(--font-size-lg);
+	margin-bottom: 0;
+}
+
+h5 {
+	font-size: var(--font-size-md);
+	margin-bottom: 0;
+}
+
+h6 {
+	font-size: var(--font-size-md);
+	margin-bottom: 0;
+}
+
+p {
+	margin: 0;
+}

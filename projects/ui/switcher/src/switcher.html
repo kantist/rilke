@@ -1,0 +1,11 @@
+<div class="ril-switcher-wrap" (click)="switch(value)">
+	<div class="ril-switcher-handle">
+		<input type="checkbox" class="switcher-input" [value]="value" [attr.checked]="value" />
+
+		<span class="check-detector"></span>
+	</div>
+
+	<div class="ril-switcher-label">
+		<ng-content></ng-content>
+	</div>
+</div>

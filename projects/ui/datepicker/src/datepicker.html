@@ -1,0 +1,22 @@
+<div class="ril-input-wrap" (click)="autoOpen ? open() : onFocus(disabled || readonly)">
+	<div class="input-infix">
+		<input
+			[matDatepicker]="picker"
+			type="{{ type }}"
+			name="{{ name }}"
+			placeholder="{{ placeholder }}"
+			class="input-control"
+			[(ngModel)]="value"
+			readonly="true"
+			[required]="required ? true : false"
+			(focus)="onFocus(disabled || readonly)"
+			(blur)="onBlur(disabled || readonly)"
+			[attr.disabled]="disabled ? '' : null"
+		/>
+	</div>
+
+	<div class="input-suffix input-icon" [ngStyle]="{ color: properties.suffixIconColor }">
+		<span class="icon material-icons">calendar_today</span>
+	</div>
+</div>
+<mat-datepicker [touchUi]="touchUi" #picker (closed)="close()"></mat-datepicker>

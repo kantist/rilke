@@ -1,0 +1,74 @@
+:host {
+	display: block;
+	margin: 0 0 var(--spacer-xl);
+	height: min-content;
+
+	&.float {
+		position: relative;
+
+		::ng-deep {
+			ril-form-label {
+				position: absolute;
+				cursor: text;
+				font-size: 65%;
+				opacity: 100%;
+				transition: all 0.2s;
+				top: -0.5em;
+				margin-left: var(--spacer-md);
+				color: var(--c-800);
+				z-index: 3;
+				line-height: 1;
+				padding: 0 1px;
+				pointer-events: none;
+				text-transform: uppercase;
+
+				&::before {
+					content: ' ';
+					display: block;
+					position: absolute;
+					background: var(--800);
+					height: 1px;
+					top: 50%;
+					left: -0.3em;
+					right: -0.3em;
+					z-index: -1;
+				}
+			}
+		}
+
+		&:not(.has-value):not(.input-focus) {
+			::ng-deep {
+				ril-form-label {
+					font-size: 0.8rem !important;
+					opacity: 50%;
+					top: calc(50% - 0.4rem) !important;
+					margin-left: var(--spacer-md);
+
+					&::before {
+						background: transparent;
+					}
+				}
+			}
+		}
+
+		&.text-area {
+			&:not(.has-value):not(.input-focus) {
+				::ng-deep {
+					ril-form-label {
+						top: 1.2rem !important;
+					}
+				}
+			}
+		}
+
+		&.rich-text {
+			&:not(.has-value):not(.input-focus) {
+				::ng-deep {
+					ril-form-label {
+						top: 4.2rem !important;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,75 @@
+:host {
+	align-items: center;
+	background: material-palette(grey, 400);
+	border-radius: 50%;
+	display: flex;
+	font-weight: 600;
+	justify-content: center;
+	line-height: 1;
+	position: relative;
+	text-transform: uppercase;
+	flex-shrink: 0;
+	cursor: default;
+	user-select: none; /* supported by Chrome and Opera */
+
+	img {
+		max-height: 100%;
+		max-width: 100%;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		transition: 0.5s ease;
+		border-radius: inherit;
+	}
+
+	.initial {
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		align-items: center;
+		transition: 0.5s ease;
+		width: 100%;
+		height: 100%;
+		background: material-palette(grey, 400);
+		color: material-palette(grey, 700);
+		border-radius: inherit;
+	}
+
+	.icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+		color: material-palette(grey, 700);
+	}
+
+	&.selectable {
+		cursor: pointer;
+
+		.select-image {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			color: material-palette(grey, 700);
+			z-index: 3;
+			opacity: 100%;
+			transition: 0.5s ease;
+			font-size: 75%;
+		}
+
+		&:hover {
+			.select-image {
+				opacity: 100%;
+			}
+
+			img,
+			.initial {
+				opacity: 30%;
+			}
+		}
+	}
+}

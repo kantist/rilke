@@ -1,0 +1,62 @@
+:host {
+	position: relative;
+
+	.wrapper {
+		display: flex;
+		align-items: center;
+		z-index: 800;
+		cursor: pointer;
+
+		span {
+			width: 1.6rem;
+			height: 1.6rem;
+			border-radius: 4px;
+			background-color: #eaeaea;
+			border: 1px solid var(--c-800);
+		}
+
+		p {
+			margin-left: 0.6rem;
+			color: var(--c-800);
+		}
+	}
+}
+
+::ng-deep {
+	.chrome-picker {
+		border-radius: 0 0 var(--radius-sm) var(--radius-sm) !important;
+		background-color: var(--900);
+		margin: var(--spacer-md) 0;
+	}
+
+	.chrome-body {
+		.chrome-toggles {
+			align-self: center;
+
+			.chrome-hue {
+				margin: 0 !important;
+			}
+		}
+
+		.wrap {
+			width: 100%;
+			text-align: center;
+
+			input {
+				width: auto !important;
+				color: var(--c-800) !important;
+				background: var(--700) !important;
+				border-radius: var(--radius-sm) !important;
+				box-shadow: none !important;
+			}
+
+			span {
+				display: none !important;
+			}
+		}
+	}
+
+	.chrome-toggle {
+		display: none;
+	}
+}

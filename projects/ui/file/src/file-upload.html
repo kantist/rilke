@@ -1,0 +1,28 @@
+<div class="wrapper">
+	<div class="upload-btn" (click)="!disabled ? fileInput.click() : ''">
+		<ng-container *ngIf="!value">
+			<span class="upload-icon material-icons">file_upload</span>
+			<p>{{ selectFileNotice ? selectFileNotice : lang.common.select_file }}</p>
+		</ng-container>
+
+		<ng-container *ngIf="value && !isUrl">
+			<img *ngIf="isImage" [src]="value.base64" alt="" />
+			<span *ngIf="!isImage" class="file-icon material-icons">insert_drive_file</span>
+			<p class="file-name" ril-truncate>{{ value.name }}</p>
+			<div class="close-icon">
+				<span ril-stop-propagation class="material-icons" (click)="cancelFile()">cancel</span>
+			</div>
+		</ng-container>
+
+		<ng-container *ngIf="value && isUrl">
+			<img *ngIf="isImage" [src]="value" alt="" />
+			<span *ngIf="!isImage" class="file-icon material-icons">insert_drive_file</span>
+			<p class="file-name" ril-truncate>unkown</p>
+			<div class="close-icon">
+				<span ril-stop-propagation class="material-icons" (click)="cancelFile()">cancel</span>
+			</div>
+		</ng-container>
+
+		<input type="file" (change)="onFileChanged($event)" [required]="required ? true : false" #fileInput hidden />
+	</div>
+</div>

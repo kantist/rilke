@@ -1,0 +1,18 @@
+<ul class="tabs-ul nav nav-pills">
+	<div class="button-group" (click)="$event.stopPropagation()">
+		<div
+			class="plate"
+			[style.width]="'calc(100% / ' + tabs.length + ' - .3rem)'"
+			[style.transform]="'translateX(calc(100% * ' + currentIndex + '))'"
+		>
+			<div class="box"></div>
+		</div>
+		<div class="button" *ngFor="let tab of tabs" [class.active]="tab.active" (click)="selectTab(tab); onClick(tab)">
+			<span class="btn-icon mr-1" [ngClass]="tab.icon"></span>
+			<span>{{ tab.title }}</span>
+		</div>
+	</div>
+</ul>
+<div class="tab-content h-100" [class]="scrollable ? 'scrollable' : ''">
+	<ng-content></ng-content>
+</div>

@@ -1,0 +1,21 @@
+<div class="select-image" *ngIf="selectable">
+	<span class="icon material-icons">photo_camera</span>
+</div>
+
+<img src="{{ src }}" alt="{{ alt }}" *ngIf="src" />
+
+<div *ngIf="icon" class="icon">
+	<span class="material-icons">{{ icon }}</span>
+</div>
+
+<div
+	class="initial noselect"
+	*ngIf="!src && !icon && initial"
+	[ngStyle]="{
+		'font-size': (initial | rilInitialLetter)?.length > 2 ? '70%' : ''
+	}"
+>
+	{{ initial | rilInitialLetter }}
+</div>
+
+<ng-content></ng-content>

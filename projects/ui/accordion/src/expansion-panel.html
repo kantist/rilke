@@ -1,0 +1,16 @@
+<mat-expansion-panel
+	[disabled]="disabled"
+	[expanded]="expanded"
+	[hideToggle]="hideToggle"
+	[togglePosition]="togglePosition"
+>
+	<mat-expansion-panel-header>
+		<mat-panel-title>
+			<ng-content select="ril-expansion-panel-title"></ng-content>
+		</mat-panel-title>
+		<mat-panel-description>
+			<ng-content select="ril-expansion-panel-description"></ng-content>
+		</mat-panel-description>
+	</mat-expansion-panel-header>
+	<ng-content select="ril-expansion-panel-content"></ng-content>
+</mat-expansion-panel>

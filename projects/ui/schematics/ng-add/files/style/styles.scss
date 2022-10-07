@@ -1,0 +1,149 @@
+/* stylelint-disable at-rule-empty-line-before */
+/* stylelint-disable scss/at-mixin-argumentless-call-parentheses */
+
+@use 'sass:math';
+@use 'node_modules/@angular/material' as mat;
+
+@import 'node_modules/@angular/cdk/overlay';
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '../font/trenda/style';
+@import './palette';
+@import './structure';
+@import './typography';
+
+@include ril-palette();
+@include ril-theme();
+@include ril-structure();
+@include ril-typography();
+
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$rilke-ui-primary: mat.define-palette($main-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$rilke-ui-theme: mat.define-light-theme(
+	(
+		color: (
+			primary: $rilke-ui-primary,
+			accent: $rilke-ui-primary,
+			warn: $rilke-ui-primary,
+		),
+	)
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($rilke-ui-theme);
+@include cdk-overlay();
+
+html {
+	display: block;
+	scroll-behavior: smooth;
+	font-family: $f-family;
+	color: var(--c-800);
+	font-weight: var(--font-weight-md);
+	line-height: var(--font-size-md);
+}
+
+body {
+	height: 100%;
+	background-color: var(--900);
+
+	mat-bottom-sheet-container {
+		padding: calc(var(--spacer-lg) * 2) !important;
+		color: inherit !important;
+		font-family: inherit !important;
+		background: var(--900) !important;
+		border-top-right-radius: var(--radius-md) !important;
+		border-top-left-radius: var(--radius-md) !important;
+	}
+
+	snack-bar-container {
+		background: transparent !important;
+		padding: 0 !important;
+		overflow: hidden !important;
+		box-shadow: var(--shadow-md);
+	}
+
+	.modal-overlay-wrapper {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		z-index: 1000;
+
+		.modal-panel {
+			max-width: 100%;
+			position: static;
+			padding: 1rem !important;
+			background: var(--800) !important;
+			border-radius: var(--radius-md);
+		}
+	}
+
+	.list-toolbar-overlay-wrapper {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		position: absolute;
+		z-index: 1000;
+
+		.list-toolbar-panel {
+			max-width: 100%;
+			position: static;
+			padding: 1rem !important;
+			background: var(--800) !important;
+			border-radius: var(--radius-md);
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.scrollable {
+	&::-webkit-scrollbar {
+		overflow: auto;
+		width: 0;
+		background: transparent;
+	}
+
+	overflow: auto;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	scroll-behavior: smooth;
+}
+
+* {
+	-webkit-touch-callout: none;
+	outline: none !important;
+
+	&:active {
+		outline: none !important;
+	}
+
+	&:focus {
+		outline: none !important;
+	}
+
+	&:visited {
+		outline: none !important;
+	}
+
+	&:hover {
+		outline: none !important;
+	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}

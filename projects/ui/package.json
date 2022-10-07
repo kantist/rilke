@@ -1,0 +1,46 @@
+{
+	"name": "@rilke/ui",
+	"version": "14.0.0",
+	"description": "Rilke UI Library",
+	"scripts": {
+		"build": "tsc -p ../../tsconfig.schematics.json",
+		"postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/core/ && copyfiles -f schematics/ng-add/files/style/** ../../dist/core/schematics/ng-add/files/style && copyfiles -f schematics/ng-add/files/font/*/** ../../dist/core/schematics/ng-add/files/font/trenda"
+	},
+	"keywords": [
+		"angular",
+		"ui",
+		"material design",
+		"components",
+		"rilke",
+		"rilke architecture"
+	],
+	"author": "Kant Yazılım A.Ş.",
+	"license": "MIT",
+	"homepage": "https://rilke.ist/ui",
+	"bugs": {
+		"url": "https://github.com/kantist/rilke/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kantist/rilke.git"
+	},
+	"dependencies": {
+		"@angular/cdk": "14.1.2",
+		"@angular/material": "14.1.2",
+		"ngx-color": "8.0.2",
+		"tslib": "2.4.0"
+	},
+	"peerDependencies": {
+		"@angular/core": "14.1.2",
+		"@angular/common": "14.1.2"
+	},
+	"devDependencies": {
+		"@angular/core": "14.1.2",
+		"@angular/common": "14.1.2",
+		"tslib": "2.4.0",
+		"copyfiles": "file:../../node_modules/copyfiles",
+		"typescript": "file:../../node_modules/typescript"
+	},
+	"schematics": "./schematics/collection.json",
+	"ng-add": {}
+}

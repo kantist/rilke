@@ -1,0 +1,48 @@
+:host {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+	.text {
+		margin-bottom: 2rem;
+
+		p {
+			color: var(--c-800);
+		}
+	}
+
+	.button-area {
+		display: flex;
+		justify-content: flex-end;
+
+		button {
+			border: none;
+			cursor: pointer;
+			padding: calc(var(--spacer-sm) / 2) var(--spacer-sm);
+			border-radius: var(--radius-sm);
+			color: var(--900);
+			display: flex;
+			align-items: center;
+
+			&.cancel {
+				background-color: var(--error-color);
+			}
+
+			&.action {
+				background-color: var(--success-color);
+				margin-left: 1rem;
+
+				span {
+					margin-right: 0.5rem;
+				}
+			}
+		}
+	}
+}
+
+::ng-deep {
+	.mat-dialog-container {
+		background: var(--900) !important;
+		border-radius: var(--radius-md) !important;
+	}
+}

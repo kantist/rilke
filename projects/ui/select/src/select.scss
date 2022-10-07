@@ -1,0 +1,101 @@
+:host {
+	border-radius: var(--radius-md);
+	display: block;
+	font-size: var(--font-size-md);
+	line-height: var(--font-lh-md);
+	position: relative;
+
+	.select-box {
+		align-items: center;
+		background: var(--800);
+		border: 1px solid var(--800);
+		box-shadow: var(--shadow-sm);
+		border-radius: inherit;
+		color: var(--c-800);
+		cursor: pointer;
+		overflow: hidden;
+		transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+			color 0.2s ease-in-out;
+		width: 100%;
+		padding: var(--spacer-sm) var(--spacer-md);
+		min-width: 10rem;
+	}
+
+	&:hover {
+		.select-box {
+			background: var(--700);
+			border-color: var(--700);
+			color: var(--c-700);
+		}
+	}
+
+	&.multiple {
+		.select-box {
+			height: unset;
+			min-height: 3rem;
+
+			> .value {
+				margin: -var(--spacer-xs);
+				white-space: normal;
+			}
+		}
+	}
+
+	&.opened {
+		.select-box {
+			background: var(--700);
+			border-color: var(--200);
+			box-shadow: var(--shadow-md);
+			color: var(--c-700);
+		}
+	}
+
+	&.disabled {
+		cursor: not-allowed;
+
+		.select-box {
+			background: var(--500);
+			border-color: var(--500);
+			box-shadow: none;
+			color: var(--c-500);
+			cursor: not-allowed;
+			pointer-events: none;
+		}
+	}
+
+	&.ng-invalid.ng-touched,
+	.has-error & {
+		.select-box {
+			border: 1px solid var(--error-color);
+		}
+	}
+}
+
+::ng-deep {
+	.mat-select-panel {
+		background: var(--800);
+		border-radius: var(--radius-md) !important;
+
+		&::-webkit-scrollbar {
+			display: none;
+			scrollbar-width: none;
+		}
+
+		.mat-option {
+			color: var(--c-800);
+		}
+	}
+
+	.mat-select-value {
+		max-width: 100%;
+		color: var(--c-800);
+
+		.mat-select-placeholder {
+			color: var(--700);
+		}
+	}
+
+	.mat-select-arrow {
+		color: var(--c-800);
+	}
+}

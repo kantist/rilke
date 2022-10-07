@@ -1,0 +1,17 @@
+<div class="left">
+	<span class="icon material-icons" (click)="closeWindow(true)">close</span>
+	<span class="quantity">{{ options.selected }}</span>
+	<span class="text">{{ options.text_selected ? options.text_selected : lang.common.text_selected }}</span>
+</div>
+<div *ngIf="options.buttons && options.buttons.length" class="right">
+	<button
+		*ngFor="let button of options.buttons"
+		(click)="clickButton(button.name)"
+		[view]="button.class"
+		[size]="'md'"
+		ril-button
+	>
+		<span *ngIf="button.icon" class="btn-icon" [ngClass]="button.icon"></span>
+		{{ button.text }}
+	</button>
+</div>

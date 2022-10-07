@@ -1,0 +1,5 @@
+<ng-content></ng-content>
+<span class="menu-trigger" #menuTrigger [matMenuTriggerFor]="menu"></span>
+<mat-menu #menu="matMenu" [class]="menuClass" [hasBackdrop]="hasBackdrop" [xPosition]="xPosition">
+	<ng-content select="ril-menu-items"></ng-content>
+</mat-menu>

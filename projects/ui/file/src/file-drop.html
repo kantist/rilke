@@ -1,0 +1,22 @@
+<div class="wrapper" [class.fileover]="fileOver" (click)="fileInput.click()">
+	<div class="dropzone">
+		<ng-container *ngIf="!fileOver">
+			<span class="link">{{ lang.common.select_file }}</span>
+			<span>{{ lang.filedrop.or_drag_here }}</span>
+		</ng-container>
+		<ng-container *ngIf="fileOver">
+			<span>{{ lang.filedrop.drop_file_here }}</span>
+		</ng-container>
+	</div>
+	<input
+		type="file"
+		(change)="onFileChanged($event)"
+		[required]="required ? true : false"
+		[multiple]="multiple ? true : false"
+		#fileInput
+		hidden
+	/>
+</div>
+<div class="file" *ngFor="let v of value; let i = index">
+	<ril-file-upload *ngIf="v" [disabled]="true" [(ngModel)]="value[i]"></ril-file-upload>
+</div>

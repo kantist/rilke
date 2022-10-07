@@ -1,0 +1,18 @@
+<div class="ril-textarea-wrap">
+	<textarea
+		name="{{ name }}"
+		placeholder=" {{ placeholder }}"
+		[(ngModel)]="value"
+		[attr.maxlength]="charLimiter"
+		class="textarea-control"
+		(blur)="onBlur(disabled)"
+		(focus)="onFocus(disabled)"
+		[attr.rows]="rows"
+	></textarea>
+
+	<div class="char-limiter" *ngIf="charLimiter">
+		<span class="limiter-before" *ngIf="limiter.before">{{ limiter.before }}</span>
+		<span class="limiter-counter">{{ limiter.counter }}</span>
+		<span class="limiter-after" *ngIf="limiter.after">{{ limiter.after }}</span>
+	</div>
+</div>

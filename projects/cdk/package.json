@@ -1,0 +1,37 @@
+{
+	"name": "@rilke/cdk",
+	"version": "14.0.0",
+	"description": "Rilke CDK Library",
+	"keywords": [
+		"angular",
+		"ui",
+		"material design",
+		"components",
+		"rilke",
+		"cdk",
+		"rilke cdk",
+		"rilke architecture"
+	],
+	"author": "Kant Yazılım A.Ş.",
+	"license": "MIT",
+	"homepage": "https://rilke.ist",
+	"bugs": {
+		"url": "https://github.com/kantist/rilke/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kantist/rilke.git"
+	},
+	"dependencies": {
+		"tslib": "2.4.0"
+	},
+	"peerDependencies": {
+		"@angular/core": "14.1.2",
+		"@angular/common": "14.1.2"
+	},
+	"devDependencies": {
+		"@angular/core": "14.1.2",
+		"@angular/common": "14.1.2",
+		"tslib": "2.4.0"
+	}
+}

@@ -1,0 +1,6 @@
+<div class="toast" [ngClass]="type">
+  <p>{{ text | titlecase }}</p>
+  <button ril-button *ngIf="action" (click)="onClick()">
+    {{ action | titlecase }}
+  </button>
+</div>

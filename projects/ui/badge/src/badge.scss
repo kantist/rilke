@@ -1,0 +1,95 @@
+:host {
+	align-items: center;
+	justify-content: center;
+	border-radius: var(--radius-md);
+	display: inline-flex;
+	font-weight: var(--font-weight-md);
+
+	// Sizes
+	&.badge-xs {
+		font-size: var(--font-size-xs);
+		line-height: var(--font-lh-xs);
+		border-radius: var(--radius-xs);
+		padding: calc(var(--spacer-xs) / 2) var(--spacer-xs);
+	}
+
+	&.badge-sm {
+		font-size: var(--font-size-sm);
+		line-height: var(--font-lh-sm);
+		border-radius: var(--radius-sm);
+		padding: calc(var(--spacer-sm) / 2) var(--spacer-sm);
+	}
+
+	&.badge-md {
+		font-size: var(--font-size-md);
+		line-height: var(--font-lh-md);
+		border-radius: var(--radius-md);
+		padding: calc(var(--spacer-md) / 2) var(--spacer-md);
+	}
+
+	&.badge-lg {
+		font-size: var(--font-size-lg);
+		line-height: var(--font-lh-lg);
+		border-radius: var(--radius-lg);
+		padding: calc(var(--spacer-lg) / 2) var(--spacer-lg);
+	}
+
+	&.badge-xl {
+		font-size: var(--font-size-xl);
+		line-height: var(--font-lh-xl);
+		border-radius: var(--radius-xl);
+		padding: calc(var(--spacer-xl) / 2) var(--spacer-xl);
+	}
+
+	&.extra-thin {
+		font-weight: var(--font-weight-xs);
+	}
+
+	&.thin {
+		font-weight: var(--font-weight-sm);
+	}
+
+	&.bold {
+		font-weight: var(--font-weight-lg);
+	}
+
+	&.heavy-bold {
+		font-weight: var(--font-weight-xl);
+	}
+
+	// Colors
+	&.badge-accent {
+		background: var(--accent-color);
+		color: var(--accent-text);
+	}
+
+	&.badge-success {
+		background: var(--success-color);
+		color: var(--success-text);
+	}
+
+	&.badge-warning {
+		background: var(--warning-color);
+		color: var(--warning-text);
+	}
+
+	&.badge-error {
+		background: var(--error-color);
+		color: var(--error-text);
+	}
+
+	&.badge-info {
+		background: var(--info-color);
+		color: var(--info-text);
+	}
+
+	&.badge-light {
+		background: var(--c-900);
+		color: var(--900);
+	}
+
+	&.badge-dark {
+		background: var(--900);
+		color: var(--c-900);
+	}
+}

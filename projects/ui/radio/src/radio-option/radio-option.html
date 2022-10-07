@@ -1,0 +1,18 @@
+<label class="ril-radio-wrap" (click)="switch(_value)">
+	<input
+		type="radio"
+		name="{{ name }}"
+		class="radio-input"
+		[value]="_value"
+		[attr.checked]="checked ? true : null"
+		[attr.disabled]="disabled ? true : null"
+	/>
+
+	<div class="ril-radio-handle">
+		<span class="check-detector"></span>
+	</div>
+
+	<div class="ril-radio-label">
+		<ng-content></ng-content>
+	</div>
+</label>

@@ -1,0 +1,28 @@
+<div
+	class="wrapper"
+	(click)="togglePicker()"
+	cdkOverlayOrigin
+	#trigger="cdkOverlayOrigin"
+>
+	<span [style.backgroundColor]="value"></span>
+	<p *ngIf="showHex">{{ value | uppercase }}</p>
+</div>
+
+<ng-template
+	cdkConnectedOverlay
+	[cdkConnectedOverlayOrigin]="trigger"
+	[cdkConnectedOverlayOpen]="showPicker"
+	[cdkConnectedOverlayBackdropClass]="'cdk-overlay-transparent-backdrop'"
+	[cdkConnectedOverlayHasBackdrop]="true"
+	(backdropClick)="togglePicker()"
+>
+	<div class="picker" [class]="direction">
+		<color-chrome
+			*ngIf="showPicker"
+			[color]="value"
+			triangle="hide"
+			[disableAlpha]="true"
+			(onChange)="handleChange($event)"
+		></color-chrome>
+	</div>
+</ng-template>

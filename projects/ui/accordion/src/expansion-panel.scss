@@ -1,0 +1,13 @@
+:host {
+	::ng-deep {
+		.mat-expansion-panel {
+			background: var(--800);
+			box-shadow: var(--shadow-md);
+			border-radius: var(--radius-md);
+
+			.mat-expansion-indicator::after {
+				color: var(--c-700) !important;
+			}
+		}
+	}
+}

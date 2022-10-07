@@ -1,0 +1,41 @@
+/* stylelint-disable custom-property-pattern */
+@use 'sass:math';
+
+$base-size: 1rem;
+
+$structure: (
+	base-size: $base-size,
+	radius: (
+		xs: math.div($base-size, 3),
+		sm: math.div($base-size, 2),
+		md: math.div($base-size, 1.5),
+		lg: $base-size,
+		xl: $base-size * 1.5,
+	),
+	spacer: (
+		xs: math.div($base-size, 2),
+		sm: math.div($base-size, 1.5),
+		md: $base-size,
+		lg: $base-size * 1.5,
+		xl: $base-size * 2,
+		xxl: $base-size * 2.5,
+	),
+	shadow: (
+		sm: 'rgba(60, 64, 67, 0.3) 0 1px 2px 0, rgba(60, 64, 67, 0.15) 0 1px 3px 1px',
+		md: 0 0.5rem 1rem rgba(0, 0, 0, 15%),
+	),
+);
+
+@mixin ril-structure() {
+	:root {
+		@each $key, $value in $structure {
+			@if type-of($value) != 'map' {
+				--#{$key}: #{$value};
+			} @else if type-of($value) == 'map' {
+				@each $nk, $nv in $value {
+					--#{$key}-#{$nk}: #{$nv};
+				}
+			}
+		}
+	}
+}

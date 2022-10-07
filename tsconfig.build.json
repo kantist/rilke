@@ -1,0 +1,19 @@
+{
+	"extends": "./tsconfig.json",
+	"exclude": ["projects/**/test.ts", "**/*.spec.ts"],
+	"compilerOptions": {
+		"outDir": "./dist/out-tsc/lib",
+		"declaration": true,
+		"sourceMap": true,
+		"inlineSourceMap": true,
+		"inlineSources": true,
+		"paths": {
+			"@rilke/ui": ["./dist/ui"],
+			"@rilke/ui/*": ["./dist/ui/*"],
+			"@rilke/common": ["./dist/common"],
+			"@rilke/common/*": ["./dist/common/*"],
+			"@rilke/cdk": ["./dist/cdk"],
+			"@rilke/cdk/*": ["./dist/cdk/*"]
+		}
+	}
+}

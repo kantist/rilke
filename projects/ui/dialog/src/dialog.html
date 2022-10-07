@@ -1,0 +1,20 @@
+<div class="text">
+	<p>{{ data.text }}</p>
+</div>
+
+<ng-container *ngIf="data.form">
+	<form class="pt-1 pb-4" [formGroup]="data.form">
+		<ng-container *ngFor="let control of formArray; let i = index">
+			<ril-input [formControlName]="control[0]"></ril-input>
+		</ng-container>
+	</form>
+</ng-container>
+
+<div class="button-area">
+	<button class="cancel" (click)="onCancel()">
+		{{ data.cancel }}
+	</button>
+	<button class="action" (click)="onAction()">
+		<span class="material-icons">check_circle</span>{{ data.action }}
+	</button>
+</div>

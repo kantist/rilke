@@ -1,0 +1,59 @@
+:host {
+	.toast {
+		position: relative;
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-around;
+		border-radius: var(--radius-md);
+		align-items: center;
+		padding: 10px 15px;
+		min-height: 48px;
+
+		p {
+			color: var(--c-800);
+			font-size: 1rem;
+			line-height: 1.6rem;
+			margin-right: 0.6rem;
+		}
+
+		&.default {
+			background: var(--900);
+
+			button {
+				background-color: var(--700);
+			}
+		}
+
+		&.success {
+			background: var(--success-color);
+
+			button {
+				background-color: var(--success-hover);
+			}
+		}
+
+		&.info {
+			background: var(--info-color);
+
+			button {
+				background-color: var(--info-hover);
+			}
+		}
+
+		&.warning {
+			background: var(--warning-color);
+
+			button {
+				background-color: var(--warning-hover);
+			}
+		}
+
+		&.error {
+			background: var(--error-color);
+
+			button {
+				background-color: var(--error-hover);
+			}
+		}
+	}
+}

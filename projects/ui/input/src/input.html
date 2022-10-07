@@ -1,0 +1,48 @@
+<div class="ril-input-wrap" (click)="onFocus(disabled || readonly)">
+	<div
+		class="input-prefix input-icon"
+		[ngStyle]="{ color: properties.prefixIconColor }"
+		*ngIf="properties.prefixIconValue"
+	>
+		<span class="{{ properties.prefixIconValue }}"></span>
+	</div>
+
+	<div class="input-prefix" *ngIf="properties.prefixValue" [ngStyle]="{ color: properties.prefixColor }">
+		{{ properties.prefixValue }}
+	</div>
+
+	<ng-content select="[contentBefore]"></ng-content>
+
+	<div class="input-infix">
+		<input
+			type="{{ type }}"
+			name="{{ name }}"
+			min="{{ min }}"
+			max="{{ max }}"
+			placeholder="{{ placeholder }}"
+			class="input-control"
+			[(ngModel)]="value"
+			[readonly]="readonly ? true : false"
+			[required]="required ? true : false"
+			(focus)="onFocus(disabled || readonly)"
+			(blur)="onBlur(disabled || readonly)"
+			[attr.disabled]="disabled ? '' : null"
+		/>
+	</div>
+
+	<ng-content select="[contentAfter]"></ng-content>
+
+	<div class="input-suffix" *ngIf="properties.suffixValue" [ngStyle]="{ color: properties.suffixColor }">
+		{{ properties.suffixValue }}
+	</div>
+
+	<div
+		class="input-suffix input-icon"
+		[ngStyle]="{ color: properties.suffixIconColor }"
+		*ngIf="properties.suffixIconValue"
+	>
+		<span class="{{ properties.suffixIconValue }}"></span>
+	</div>
+
+	<div class="char-limiting" *ngIf="charLimiting > 0">{{ charLength }}</div>
+</div>

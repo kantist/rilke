@@ -1,0 +1,50 @@
+:host {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	align-content: center;
+	width: 100%;
+	max-height: 5rem;
+	border-radius: var(--radius-xs);
+	background: var(--800);
+
+	+ & {
+		margin-top: var(--spacer-xs);
+	}
+
+	.list-row {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		width: 100%;
+		min-height: 5rem;
+		color: var(--c-700);
+
+		.columns {
+			padding: var(--spacer-md);
+		}
+
+		::ng-deep {
+			ril-avatar {
+				margin-right: 0.5rem;
+			}
+		}
+
+		&:hover {
+			div {
+				color: var(--c-500);
+			}
+		}
+	}
+
+	&:last-child {
+		margin-bottom: 2rem;
+	}
+
+	&.opened {
+		max-height: 100%;
+		box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 7.5%);
+	}
+}

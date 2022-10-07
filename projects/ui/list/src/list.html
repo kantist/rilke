@@ -1,0 +1,56 @@
+<div class="content">
+	<div #refHeader>
+		<ng-content select="ril-list-header"></ng-content>
+	</div>
+	<div #refItem class="h-100">
+		<ng-content select="ril-list-item"></ng-content>
+	</div>
+</div>
+
+<!-- <div class="skeleton header" *ngIf="listHeader" ka-skeleton>
+	<div *ngIf="checkbox" class="list-check">
+		<ka-checkbox skeleton></ka-checkbox>
+	</div>
+	<div class="columns">
+		<div>
+			<span skeleton>------------------</span>
+		</div>
+		<div>
+			<span skeleton>------------</span>
+		</div>
+		<div>
+			<span skeleton>------------</span>
+		</div>
+	</div>
+</div>
+
+<div class="skeleton scrollable h-100" *ngIf="listItem">
+	<div class="list-item" *ngFor="let number of skeletonRows" ka-skeleton>
+		<div class="list-row-skeleton">
+			<div *ngIf="checkbox" class="list-check">
+				<ka-checkbox skeleton></ka-checkbox>
+			</div>
+			<div class="columns">
+				<div>
+					<ka-avatar skeleton></ka-avatar>
+					<span skeleton>---------------------------</span>
+				</div>
+				<div>
+					<span skeleton>------------------</span>
+				</div>
+				<div>
+					<span skeleton>------------------</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+-->
+
+<ril-pagination
+	*ngIf="pagesCount > 1"
+	[pageRouter]="pageRouter"
+	[pagesNumber]="pagesCount"
+	[pageNum]="page"
+	(pageChange)="pageListener($event)"
+></ril-pagination>

@@ -1,0 +1,57 @@
+:host {
+	.wrapper {
+		list-style-type: none;
+		display: flex;
+		justify-content: center;
+		margin: 1rem 0;
+		padding: 0;
+
+		.page-item {
+			margin: 0;
+
+			.page-link {
+				background: var(--700);
+				border-color: var(--700);
+				border-left: 1px solid #353535;
+				color: var(--c-500);
+				padding: 0.8rem 1.6rem;
+				cursor: pointer;
+
+				&:hover {
+					background: var(--500);
+					border-color: var(--500);
+					color: var(--c-500);
+				}
+			}
+
+			&:first-child {
+				.page-link {
+					border-color: transparent;
+					border-top-left-radius: 0.8rem;
+					border-bottom-left-radius: 0.8rem;
+				}
+			}
+
+			&:last-child {
+				.page-link {
+					border-top-right-radius: 0.8rem;
+					border-bottom-right-radius: 0.8rem;
+				}
+			}
+		}
+
+		.page-item.active {
+			.page-link {
+				background: var(--500);
+				border-color: transparent;
+				color: var(--c-500);
+			}
+		}
+
+		.page-item.disabled {
+			.page-link {
+				color: #939393;
+			}
+		}
+	}
+}

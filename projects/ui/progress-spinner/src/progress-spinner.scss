@@ -1,0 +1,22 @@
+:host {
+	display: flex;
+	justify-content: center;
+	padding: 2rem;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+
+	.mat-progress-spinner {
+		stroke: var(--800);
+	}
+
+	.mat-progress-spinner circle,
+	.mat-spinner circle {
+		stroke: inherit;
+	}
+
+	p {
+		font-weight: 700;
+		margin-top: 1rem;
+	}
+}

@@ -1,0 +1,10 @@
+:host {
+	display: block;
+	font-weight: 400;
+
+	&[required] {
+		&::after {
+			content: ' *';
+		}
+	}
+}

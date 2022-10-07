@@ -1,0 +1,338 @@
+<div class="toolbar" *ngIf="showToolbar">
+	<div class="set">
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			(click)="triggerCommand('undo')"
+			[hidden]="isButtonHidden('undo')"
+		>
+			<span class="icon material-icons">undo</span>
+		</button>
+		<button ril-button [view]="'none'" (click)="triggerCommand('redo')" [hidden]="isButtonHidden('redo')">
+			<span class="icon material-icons">redo</span>
+		</button>
+	</div>
+	<div class="set">
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'bold-'+id"
+			[disabled]="htmlMode"
+			(click)="triggerCommand('bold')"
+			[hidden]="isButtonHidden('bold')"
+		>
+			<span class="icon material-icons">format_bold</span>
+		</button>
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'italic-'+id"
+			[disabled]="htmlMode"
+			(click)="triggerCommand('italic')"
+			[hidden]="isButtonHidden('italic')"
+		>
+			<span class="icon material-icons">format_italic</span>
+		</button>
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'underline-'+id"
+			[disabled]="htmlMode"
+			(click)="triggerCommand('underline')"
+			[hidden]="isButtonHidden('underline')"
+		>
+			<span class="icon material-icons">format_underlined</span>
+		</button>
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'strikeThrough-'+id"
+			[disabled]="htmlMode"
+			(click)="triggerCommand('strikeThrough')"
+			[hidden]="isButtonHidden('strikeThrough')"
+		>
+			<span class="icon material-icons">format_strikethrough</span>
+		</button>
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'subscript-'+id"
+			[disabled]="htmlMode"
+			(click)="triggerCommand('subscript')"
+			[hidden]="isButtonHidden('subscript')"
+		>
+			<span class="icon material-icons">subscript</span>
+		</button>
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'superscript-'+id"
+			[disabled]="htmlMode"
+			(click)="triggerCommand('superscript')"
+			[hidden]="isButtonHidden('superscript')"
+		>
+			<span class="icon material-icons">superscript</span>
+		</button>
+	</div>
+	<div class="set">
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'justifyLeft-'+id"
+			[disabled]="htmlMode"
+			(click)="triggerCommand('justifyLeft')"
+			[hidden]="isButtonHidden('justifyLeft')"
+		>
+			<span class="icon material-icons">format_align_left</span>
+		</button>
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'justifyCenter-'+id"
+			[disabled]="htmlMode"
+			(click)="triggerCommand('justifyCenter')"
+			[hidden]="isButtonHidden('justifyCenter')"
+		>
+			<span class="icon material-icons">format_align_center</span>
+		</button>
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'justifyRight-'+id"
+			[disabled]="htmlMode"
+			(click)="triggerCommand('justifyRight')"
+			[hidden]="isButtonHidden('justifyRight')"
+		>
+			<span class="icon material-icons">format_align_right</span>
+		</button>
+		<button
+			ril-button
+			[view]="'none'"
+			[id]="'justifyFull-'+id"
+			[disabled]="htmlMode"
+			(click)="triggerCommand('justifyFull')"
+			[hidden]="isButtonHidden('justifyFull')"
+		>
+			<span class="icon material-icons">format_align_justify</span>
+		</button>
+	</div>
+	<div class="set">
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'indent-'+id"
+			[disabled]="htmlMode"
+			(click)="triggerCommand('indent')"
+			[hidden]="isButtonHidden('indent')"
+		>
+			<span class="icon material-icons">format_indent_increase</span>
+		</button>
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'outdent-'+id"
+			[disabled]="htmlMode"
+			(click)="triggerCommand('outdent')"
+			[hidden]="isButtonHidden('outdent')"
+		>
+			<span class="icon material-icons">format_indent_decrease</span>
+		</button>
+	</div>
+	<div class="set">
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'insertUnorderedList-'+id"
+			[disabled]="htmlMode"
+			(click)="triggerCommand('insertUnorderedList')"
+			[hidden]="isButtonHidden('insertUnorderedList')"
+		>
+			<span class="icon material-icons">format_list_bulleted</span>
+		</button>
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'insertOrderedList-'+id"
+			[disabled]="htmlMode"
+			(click)="triggerCommand('insertOrderedList')"
+			[hidden]="isButtonHidden('insertOrderedList')"
+		>
+			<span class="icon material-icons">format_list_numbered</span>
+		</button>
+	</div>
+	<div class="set">
+		<ril-select
+			[(ngModel)]="block"
+			(ngModelChange)="triggerCommand(block)"
+			[disabled]="htmlMode"
+			[hidden]="isButtonHidden('heading')"
+		>
+			<ril-select-option *ngFor="let item of headings" [value]="item.value">{{ item.label }}</ril-select-option>
+		</ril-select>
+	</div>
+	<div class="set">
+		<ril-select
+			[(ngModel)]="fontName"
+			(change)="setFontName(fontName)"
+			[disabled]="htmlMode"
+			[hidden]="isButtonHidden('fontName')"
+		>
+			<ril-select-option *ngFor="let item of fonts" [value]="item.value">{{ item.label }}</ril-select-option>
+		</ril-select>
+	</div>
+	<div class="set">
+		<ril-select
+			[(ngModel)]="fontSize"
+			(change)="setFontSize(fontSize)"
+			[disabled]="htmlMode"
+			[hidden]="isButtonHidden('fontSize')"
+		>
+			<ril-select-option *ngFor="let item of fontSizes" [value]="item.value">{{ item.label }}</ril-select-option>
+		</ril-select>
+	</div>
+	<div class="set" *ngIf="_customClasses">
+		<ril-select
+			[(ngModel)]="customClassId"
+			(change)="setCustomClass(customClassId)"
+			[disabled]="htmlMode"
+			[hidden]="isButtonHidden('customClasses')"
+		>
+			<ril-select-option *ngFor="let item of customClassList" [value]="item.value"
+				>{{ item.label }}</ril-select-option
+			>
+		</ril-select>
+	</div>
+	<div class="set">
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'link-'+id"
+			[disabled]="isLinkButtonDisabled"
+			(click)="insertUrl()"
+			[hidden]="isButtonHidden('link')"
+		>
+			<span class="icon material-icons">insert_link</span>
+		</button>
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'unlink-'+id"
+			[disabled]="htmlMode || !linkSelected"
+			(click)="triggerCommand('unlink')"
+			[hidden]="isButtonHidden('unlink')"
+		>
+			<span class="icon material-icons">link_off</span>
+		</button>
+	</div>
+	<div class="set">
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'clearFormatting-'+id"
+			[disabled]="htmlMode"
+			(click)="triggerCommand('removeFormat')"
+			[hidden]="isButtonHidden('removeFormat')"
+		>
+			<span class="icon material-icons">format_clear</span>
+		</button>
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'insertHorizontalRule-'+id"
+			[disabled]="htmlMode"
+			(click)="triggerCommand('insertHorizontalRule')"
+			[hidden]="isButtonHidden('insertHorizontalRule')"
+		>
+			<span class="icon material-icons">minimize</span>
+		</button>
+		<!-- <button 
+			ril-button
+			[view]="'none'"
+			[id]="'toggleEditorMode-'+id"
+			[disabled]="htmlMode"
+			(click)="triggerCommand('toggleEditorMode')"
+			[hidden]="isButtonHidden('toggleEditorMode')">
+			<span class="icon material-icons">code</span>
+		</button> -->
+	</div>
+	<div class="set">
+		<div class="color" [hidden]="isButtonHidden('textColor')">
+			<ril-color-picker
+				[(ngModel)]="foreColour"
+				(colorChanged)="insertColor(foreColour, 'textColor')"
+				[disabled]="htmlMode"
+				#foreColourPicker
+			></ril-color-picker>
+			<button
+				ril-button
+				type="button"
+				[view]="'none'"
+				[disabled]="htmlMode"
+				(click)="foreColourPicker.togglePicker(); focus()"
+			>
+				<span class="material-icons" [style.color]="foreColour">format_color_text</span>
+			</button>
+		</div>
+		<div class="color" [hidden]="isButtonHidden('backgroundColor')">
+			<ril-color-picker
+				[(ngModel)]="backColor"
+				(colorChanged)="insertColor(backColor, 'backgroundColor')"
+				[disabled]="htmlMode"
+				#backColorPicker
+			></ril-color-picker>
+			<button
+				ril-button
+				type="button"
+				[view]="'none'"
+				[disabled]="htmlMode"
+				[style.background-color]="backColor"
+				(click)="backColorPicker.togglePicker(); focus()"
+			>
+				<span class="material-icons">format_color_fill</span>
+			</button>
+		</div>
+	</div>
+	<div class="set">
+		<input style="display: none" accept="image/*" type="file" (change)="onFileChanged($event)" #fileInput />
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'insertImage-'+id"
+			[disabled]="htmlMode"
+			(click)="focus(); fileInput.click()"
+			[hidden]="isButtonHidden('insertImage')"
+		>
+			<span class="icon material-icons">photo_camera</span>
+		</button>
+		<button
+			ril-button
+			type="button"
+			[view]="'none'"
+			[id]="'insertVideo-'+id"
+			[disabled]="htmlMode"
+			(click)="insertVideo()"
+			[hidden]="isButtonHidden('insertVideo')"
+		>
+			<span class="icon material-icons">videocam</span>
+		</button>
+	</div>
+</div>

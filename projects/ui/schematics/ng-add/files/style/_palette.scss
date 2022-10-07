@@ -1,0 +1,157 @@
+/* stylelint-disable custom-property-pattern */
+@use "sass:color";
+@use "sass:map";
+
+// Custom Palette
+$dark: #212121;
+$dark-contrast: color.adjust($dark, $lightness: 100%);
+
+$light: #fff;
+$light-contrast: color.adjust($light, $lightness: 100%);
+
+$themes: (
+	light: (
+		50: color.adjust($light, $lightness: 50%),
+		100: color.adjust($light, $lightness: 45%),
+		200: color.adjust($light, $lightness: 40%),
+		300: color.adjust($light, $lightness: 35%),
+		400: color.adjust($light, $lightness: 30%),
+		500: color.adjust($light, $lightness: 25%),
+		600: color.adjust($light, $lightness: 20%),
+		700: color.adjust($light, $lightness: 15%),
+		800: color.adjust($light, $lightness: 5%),
+		900: $light,
+		contrast: (
+			50: color.adjust($light-contrast, $lightness: -50%),
+			100: color.adjust($light-contrast, $lightness: -55%),
+			200: color.adjust($light-contrast, $lightness: -60%),
+			300: color.adjust($light-contrast, $lightness: -65%),
+			400: color.adjust($light-contrast, $lightness: -70%),
+			500: color.adjust($light-contrast, $lightness: -75%),
+			600: color.adjust($light-contrast, $lightness: -80%),
+			700: color.adjust($light-contrast, $lightness: -85%),
+			800: color.adjust($light-contrast, $lightness: -90%),
+			900: color.adjust($light, $lightness: 100%),
+		),
+		accent: (
+			color: color.adjust($light, $lightness: -5%),
+			text: #00c685,
+			hover: color.adjust(#00c685, $lightness: 5%),
+		),
+		success: (
+			color: color.adjust(#00c685, $lightness: -10%),
+			text: #212121,
+			hover: color.adjust(#00c685, $lightness: 10%),
+		),
+		info: (
+			color: #4fc3f7,
+			text: #fafafa,
+			hover: color.adjust(#4fc3f7, $lightness: -10%),
+		),
+		warning: (
+			color: #ffc107,
+			text: #fafafa,
+			hover: color.adjust(#ffc107, $lightness: -10%),
+		),
+		error: (
+			color: #dd5858,
+			text: #fafafa,
+			hover: color.adjust(#dd5858, $lightness: -10%),
+		),
+	),
+	dark: (
+		50: color.adjust($dark, $lightness: 50%),
+		100: color.adjust($dark, $lightness: 45%),
+		200: color.adjust($dark, $lightness: 40%),
+		300: color.adjust($dark, $lightness: 35%),
+		400: color.adjust($dark, $lightness: 30%),
+		500: color.adjust($dark, $lightness: 25%),
+		600: color.adjust($dark, $lightness: 20%),
+		700: color.adjust($dark, $lightness: 15%),
+		800: color.adjust($dark, $lightness: 5%),
+		900: $dark,
+		contrast: (
+			50: color.adjust($dark-contrast, $lightness: -50%),
+			100: color.adjust($dark-contrast, $lightness: -45%),
+			200: color.adjust($dark-contrast, $lightness: -40%),
+			300: color.adjust($dark-contrast, $lightness: -35%),
+			400: color.adjust($dark-contrast, $lightness: -30%),
+			500: color.adjust($dark-contrast, $lightness: -25%),
+			600: color.adjust($dark-contrast, $lightness: -20%),
+			700: color.adjust($dark-contrast, $lightness: -15%),
+			800: color.adjust($dark-contrast, $lightness: -5%),
+			900: color.adjust($dark, $lightness: 100%),
+		),
+		accent: (
+			color: color.adjust($light, $lightness: 5%),
+			text: #00ffab,
+			hover: color.adjust(#00ffab, $lightness: 5%),
+		),
+		success: (
+			color: color.adjust(#00ffab, $lightness: -10%),
+			text: #212121,
+			hover: color.adjust(#00ffab, $lightness: 10%),
+		),
+		info: (
+			color: #4fc3f7,
+			text: #fafafa,
+			hover: color.adjust(#4fc3f7, $lightness: -10%),
+		),
+		warning: (
+			color: #ffc107,
+			text: #fafafa,
+			hover: color.adjust(#ffc107, $lightness: -10%),
+		),
+		error: (
+			color: #dd5858,
+			text: #fafafa,
+			hover: color.adjust(#dd5858, $lightness: -10%),
+		),
+	),
+);
+
+$main-palette: null;
+
+@mixin set-theme($key: "light") {
+	$main-palette: map.get($themes, $key) !global;
+}
+
+@include set-theme("light");
+
+@mixin ril-palette() {
+	:root {
+		@each $key, $value in $main-palette {
+			@if type-of($value) == "color" {
+				--#{$key}: #{$value};
+			} @else if type-of($value) == "map" {
+				@each $nk, $nv in $value {
+					@if $key == "contrast" {
+						--c-#{$nk}: #{$nv};
+					} @else {
+						--#{$key}-#{$nk}: #{$nv};
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin ril-theme() {
+	@each $theme, $map in $themes {
+		.#{$theme} {
+			@each $key, $value in $map {
+				@if type-of($value) == "color" {
+					--#{$key}: #{$value};
+				} @else if type-of($value) == "map" {
+					@each $nk, $nv in $value {
+						@if $key == "contrast" {
+							--c-#{$nk}: #{$nv};
+						} @else {
+							--#{$key}-#{$nk}: #{$nv};
+						}
+					}
+				}
+			}
+		}
+	}
+}

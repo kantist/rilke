@@ -1,0 +1,8 @@
+<div class="list-row">
+	<div (click)="$event.stopPropagation()" *ngIf="checkbox" class="list-check">
+		<ril-checkbox [formControl]="listCheck" [value]="listCheck.value"> </ril-checkbox>
+	</div>
+	<div [ngClass]="{ 'pl-4': !checkbox }" class="columns">
+		<ng-content select="[column]"></ng-content>
+	</div>
+</div>

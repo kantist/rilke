@@ -1,0 +1,53 @@
+:host {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+
+	.wrapper {
+		background-color: var(--800);
+		border-radius: var(--radius-md);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: min-content;
+		cursor: pointer;
+		position: relative;
+		width: 100%;
+		transition: background-color 0.2s ease-in;
+
+		.dropzone {
+			border-radius: var(--radius-md);
+			border: 1px dashed var(--c-800);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: var(--spacer-lg);
+			width: 100%;
+
+			.link {
+				margin-right: var(--spacer-xs);
+				color: var(--info-color);
+			}
+		}
+
+		.upload-icon {
+			font-size: 1.4rem;
+			margin-left: 0.5rem;
+			color: var(--c-800);
+		}
+
+		&.fileover {
+			background-color: var(--700);
+		}
+
+		&:hover {
+			background-color: var(--700);
+		}
+	}
+
+	.file {
+		width: 100%;
+		margin-top: var(--spacer-md);
+	}
+}

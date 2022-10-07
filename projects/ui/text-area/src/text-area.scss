@@ -1,0 +1,125 @@
+:host {
+	border-radius: var(--radius-md);
+	color: var(--c-800);
+	display: block;
+	font-size: var(--font-size-md);
+	line-height: var(--font-lh-md);
+	width: 100%;
+
+	.ril-textarea-wrap {
+		border-radius: inherit;
+		cursor: text;
+		height: 100%;
+		padding: 0;
+		position: relative;
+		width: 100%;
+
+		.textarea-control {
+			background: var(--800);
+			border: 1px solid var(--800);
+			box-shadow: var(--shadow-sm);
+			border-radius: inherit;
+			color: inherit;
+			cursor: inherit;
+			display: block;
+			font: inherit;
+			height: 100%;
+			margin: 0;
+			padding: var(--spacer-sm) var(--spacer-md);
+			transition: background 0.2s ease-in-out, border 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+				color 0.2s ease-in-out;
+			width: 100%;
+		}
+
+		.char-limiter {
+			color: var(--500);
+			display: flex;
+			font-size: 0.9em;
+			justify-content: flex-end;
+			margin: 0 -2px;
+			pointer-events: none;
+
+			span {
+				display: block;
+				margin: var(--spacer-xs) 2px 0;
+			}
+		}
+	}
+
+	&:hover {
+		color: var(--c-500);
+
+		.ril-textarea-wrap {
+			.textarea-control {
+				background: var(--700);
+				border-color: var(--700);
+				box-shadow: var(--shadow-md);
+			}
+		}
+	}
+
+	&.textarea-focus {
+		color: var(--c-800);
+
+		.ril-textarea-wrap {
+			.textarea-control {
+				background: var(--700);
+				border-color: var(--c-200);
+				box-shadow: var(--shadow-md);
+			}
+		}
+	}
+
+	&.ng-invalid.ng-touched,
+	.has-error & {
+		.ril-textarea-wrap {
+			.textarea-control {
+				border: 1px solid var(--error-color);
+			}
+		}
+	}
+
+	&.textarea-disabled,
+	&.textarea-readonly {
+		color: var(--c-700);
+
+		.ril-textarea-wrap {
+			cursor: not-allowed;
+
+			.textarea-control {
+				background-color: var(--500);
+				border-color: var(--500);
+				pointer-events: none;
+				box-shadow: none;
+			}
+		}
+	}
+
+	&.textarea-not-resize {
+		.ril-textarea-wrap {
+			.textarea-control {
+				resize: none;
+			}
+		}
+	}
+
+	&.textarea-nostyle {
+		background: none !important;
+		border: none !important;
+		padding-left: 0;
+
+		.ril-textarea-wrap {
+			background: none !important;
+			border: none !important;
+			padding-left: 0;
+		}
+
+		textarea {
+			box-shadow: none !important;
+			background: none !important;
+			border: none !important;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+	}
+}

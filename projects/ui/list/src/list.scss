@@ -1,0 +1,197 @@
+:host {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-between;
+
+	.content {
+		opacity: 0%;
+		display: none;
+		flex-direction: column;
+	}
+
+	.skeleton {
+		opacity: 100%;
+		display: inherit;
+	}
+
+	&.loaded {
+		.content {
+			opacity: 100%;
+			display: flex;
+		}
+
+		.skeleton {
+			opacity: 0%;
+			display: none;
+		}
+
+		&.loading {
+			.content {
+				opacity: 0%;
+				display: none;
+			}
+
+			.skeleton {
+				opacity: 100%;
+				display: flex;
+			}
+
+			*[ril-skeleton] {
+				opacity: 100%;
+				visibility: visible;
+			}
+		}
+	}
+
+	::ng-deep {
+		ril-list-header .columns,
+		.list-row .columns {
+			display: flex;
+			width: 100%;
+			padding: 1rem;
+
+			div {
+				align-items: center;
+				display: flex;
+				flex-flow: row nowrap;
+				flex-basis: 0;
+				word-break: break-word;
+				padding-left: 15px;
+				flex-grow: 2;
+
+				&:first-child {
+					padding-left: 0;
+					flex-grow: 3;
+				}
+
+				&:last-child {
+					flex-grow: 1;
+				}
+			}
+		}
+	}
+
+	.list-check {
+		label {
+			height: 1.4286rem;
+		}
+
+		display: flex;
+		align-items: center;
+		margin: 0 1.1429rem;
+
+		input {
+			display: none;
+		}
+	}
+
+	.list-option {
+		display: flex;
+		width: 0;
+		margin-right: 3rem;
+		padding-left: 1rem;
+	}
+
+	.skeleton {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-between;
+
+		.list-item {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			align-content: center;
+			flex-direction: column !important;
+			border-radius: 0.3rem;
+			margin-bottom: 0.5rem;
+			max-height: 5rem;
+			transition: max-height 0.5s ease-out;
+
+			.list-row-skeleton {
+				.columns {
+					display: flex;
+					width: 100%;
+
+					div {
+						align-items: center;
+						display: flex;
+						flex-flow: row nowrap;
+						flex-basis: 0;
+						word-break: break-word;
+						padding-left: 15px;
+						flex-grow: 2;
+
+						&:first-child {
+							padding-left: 0;
+							flex-grow: 3;
+						}
+
+						&:last-child {
+							flex-grow: 1;
+						}
+					}
+				}
+
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
+				align-content: center;
+				justify-content: center;
+				width: 100%;
+				min-height: 5rem;
+
+				ril-avatar {
+					margin-right: 0.5rem;
+				}
+			}
+
+			&:nth-child(odd) {
+				background: var(--800);
+			}
+
+			&:nth-child(even) {
+				background: var(--700);
+			}
+		}
+	}
+
+	.skeleton.header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		border-radius: 0.3rem;
+		margin-bottom: 0.5rem;
+		height: 2rem;
+		flex-flow: initial;
+
+		.list-check {
+			pointer-events: none;
+			opacity: 0%;
+		}
+
+		.columns {
+			display: flex;
+			width: 100%;
+
+			div {
+				align-items: center;
+				display: flex;
+				flex-flow: row nowrap;
+				flex-basis: 0;
+				word-break: break-word;
+				padding-left: 15px;
+				flex-grow: 2;
+
+				&:first-child {
+					padding-left: 0;
+					flex-grow: 3;
+				}
+
+				&:last-child {
+					flex-grow: 1;
+				}
+			}
+		}
+	}
+}

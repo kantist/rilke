@@ -1,0 +1,51 @@
+name: Rilke Publisher
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    rilke/common:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 14
+            - run: npm install
+            - run: npm run build:common
+            - uses: JS-DevTools/npm-publish@v1
+              with:
+                  token: ${{ secrets.NPM_TOKEN }}
+                  access: public
+                  package: ./dist/common/package.json
+    rilke/ui:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 14
+            - run: npm install
+            - run: npm run build:ui
+            - run: npm run build:schematics
+            - uses: JS-DevTools/npm-publish@v1
+              with:
+                  token: ${{ secrets.NPM_TOKEN }}
+                  access: public
+                  package: ./dist/ui/package.json
+    # rilke/cdk:
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #         - uses: actions/checkout@v1
+    #         - uses: actions/setup-node@v1
+    #           with:
+    #               node-version: 14
+    #         - run: npm install
+    #         - run: npm run build:cdk
+    #         - uses: JS-DevTools/npm-publish@v1
+    #           with:
+    #               token: ${{ secrets.NPM_TOKEN }}
+    #               access: public
+    #               package: ./dist/cdk/package.json

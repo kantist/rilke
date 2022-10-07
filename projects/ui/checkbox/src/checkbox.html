@@ -1,0 +1,18 @@
+<div class="ril-checkbox-wrap" (click)="switch(value)">
+	<div class="ril-checkbox-handle">
+		<input
+			type="checkbox"
+			class="checkbox-input"
+			[name]="name"
+			[value]="value"
+			[attr.disabled]="disabled ? '' : null"
+			[attr.checked]="value"
+		/>
+
+		<span class="check-detector material-icons">done</span>
+	</div>
+
+	<div class="ril-checkbox-label">
+		<ng-content></ng-content>
+	</div>
+</div>

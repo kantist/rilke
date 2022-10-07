@@ -1,0 +1,20 @@
+:host {
+	hr {
+		border: none;
+		border-top: 1px solid rgba(31, 32, 34, 10%);
+	}
+
+	&:first-child {
+		hr {
+			display: none;
+		}
+	}
+
+	button {
+		color: var(--c-800) !important;
+
+		&:hover {
+			background: var(--700);
+		}
+	}
+}

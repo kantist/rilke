@@ -1,0 +1,163 @@
+:host {
+	display: block;
+	width: 100%;
+
+	.ril-input-wrap {
+		align-items: center;
+		background: var(--800);
+		border-radius: var(--radius-md);
+		box-shadow: var(--shadow-sm);
+		cursor: pointer;
+		display: flex;
+		position: relative;
+		transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+		will-change: background, border, box-shadow, color;
+		width: 100%;
+
+		.input-infix {
+			display: flex;
+			flex: auto;
+			min-width: 5px;
+		}
+
+		.input-control {
+			background: none;
+			border: none;
+			box-shadow: none;
+			color: var(--c-500);
+			cursor: inherit;
+			display: block;
+			font: inherit;
+			padding: var(--spacer-sm) var(--spacer-md);
+			width: 100%;
+		}
+
+		.input-prefix,
+		.input-suffix {
+			color: var(--c-500);
+			flex: none;
+			padding: 0 var(--spacer-md);
+		}
+
+		.input-icon {
+			display: flex;
+			align-items: center;
+			font-size: 1.3em;
+
+			* {
+				font-size: 1em;
+			}
+		}
+	}
+
+	&:hover {
+		.ril-input-wrap {
+			background: var(--700);
+			box-shadow: var(--shadow-md);
+		}
+	}
+
+	&.input-focus {
+		.ril-input-wrap {
+			background: var(--700);
+			border-color: var(--c-200);
+		}
+	}
+
+	&.ng-invalid.ng-touched,
+	.has-error & {
+		.ril-input-wrap {
+			border: 1px solid var(--error-color);
+		}
+	}
+
+	&.input-disabled,
+	&.input-readonly {
+		color: var(--c-500);
+
+		.ril-input-wrap {
+			background-color: var(--500);
+			box-shadow: none !important;
+			cursor: not-allowed;
+
+			.input-control {
+				pointer-events: none;
+			}
+		}
+	}
+}
+
+::ng-deep {
+	.mat-datepicker-content {
+		margin-top: 1rem;
+		box-shadow: var(--shadow-md);
+		background-color: var(--800);
+		border-radius: var(--radius-md) !important;
+		color: var(--c-800);
+
+		.mat-calendar-arrow {
+			border-top-color: var(--c-800);
+			fill: var(--c-800);
+		}
+
+		.mat-calendar-next-button,
+		.mat-calendar-previous-button {
+			color: var(--c-800);
+		}
+
+		.mat-calendar-next-button:hover,
+		.mat-calendar-previous-button:hover {
+			background-color: var(--800);
+		}
+
+		.mat-calendar-period-button:hover {
+			background-color: var(--800);
+		}
+
+		.mat-calendar-table-header {
+			color: var(--c-800);
+		}
+
+		.mat-calendar-table-header-divider::after {
+			background: #939393;
+		}
+
+		.mat-calendar-body-label {
+			color: var(--c-800);
+		}
+
+		.mat-calendar-body-cell-content {
+			color: var(--c-800);
+
+			// &:hover {
+			// 	background-color: var(--700) !important;
+			// }
+
+			&.mat-calendar-body-selected {
+				background-color: var(--success-color);
+			}
+		}
+
+		.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover
+			> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
+		.cdk-keyboard-focused
+			.mat-calendar-body-active
+			> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
+		.cdk-program-focused
+			.mat-calendar-body-active
+			> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+			background-color: var(--700) !important;
+		}
+
+		.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+			border-color: #939393;
+		}
+	}
+
+	.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover
+		> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
+	.cdk-keyboard-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
+	.cdk-program-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
+		background-color: var(--800);
+	}
+}

@@ -1,0 +1,46 @@
+<ril-editor-toolbar
+	*ngIf="config.toolbarPosition === 'top'"
+	#editorToolbar
+	[id]="'1'"
+	[uploadUrl]="config.uploadUrl"
+	[upload]="config.upload"
+	[showToolbar]="config.showToolbar !== undefined ? config.showToolbar : true"
+	[fonts]="fonts"
+	[customClasses]="config.customClasses"
+	[defaultFontName]="config.defaultFontName"
+	[defaultFontSize]="config.defaultFontSize"
+	[hiddenButtons]="config.toolbarHiddenButtons"
+	(execute)="executeCommand($event)"
+></ril-editor-toolbar>
+
+<div class="ril-richtext-wrap" #editorWrapper>
+	<div
+		#editor
+		class="richtext-control"
+		[attr.contenteditable]="config.editable"
+		[attr.translate]="config.translate"
+		[attr.spellcheck]="config.spellcheck"
+		(input)="onContentChange($event.target)"
+		(focus)="onFocus($event)"
+		(blur)="onBlur($event)"
+		(click)="exec()"
+		(keyup)="exec()"
+		(mouseout)="onTextAreaMouseOut($event)"
+		(paste)="onPaste($event)"
+	></div>
+</div>
+
+<ril-editor-toolbar
+	*ngIf="config.toolbarPosition === 'bottom'"
+	#editorToolbar
+	[id]="'1'"
+	[uploadUrl]="config.uploadUrl"
+	[upload]="config.upload"
+	[showToolbar]="config.showToolbar !== undefined ? config.showToolbar : true"
+	[fonts]="getFonts()"
+	[customClasses]="config.customClasses"
+	[defaultFontName]="config.defaultFontName"
+	[defaultFontSize]="config.defaultFontSize"
+	[hiddenButtons]="config.toolbarHiddenButtons"
+	(execute)="executeCommand($event)"
+></ril-editor-toolbar>
