@@ -6,7 +6,7 @@ on:
             - main
 
 jobs:
-    rilke/common:
+    common:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v1
@@ -20,7 +20,7 @@ jobs:
                   token: ${{ secrets.NPM_TOKEN }}
                   access: public
                   package: ./dist/common/package.json
-    rilke/ui:
+    ui:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v1
@@ -35,7 +35,7 @@ jobs:
                   token: ${{ secrets.NPM_TOKEN }}
                   access: public
                   package: ./dist/ui/package.json
-    # rilke/cdk:
+    # cdk:
     #     runs-on: ubuntu-latest
     #     steps:
     #         - uses: actions/checkout@v1
