@@ -1,6 +1,6 @@
 /* stylelint-disable custom-property-pattern */
-@use "sass:color";
-@use "sass:map";
+@use 'sass:color';
+@use 'sass:map';
 
 // Custom Palette
 $dark: #212121;
@@ -83,7 +83,7 @@ $themes: (
 			900: color.adjust($dark, $lightness: 100%),
 		),
 		accent: (
-			color: color.adjust($light, $lightness: 5%),
+			color: color.adjust($dark, $lightness: 5%),
 			text: #00ffab,
 			hover: color.adjust(#00ffab, $lightness: 5%),
 		),
@@ -112,20 +112,20 @@ $themes: (
 
 $main-palette: null;
 
-@mixin set-theme($key: "light") {
+@mixin set-theme($key: 'light') {
 	$main-palette: map.get($themes, $key) !global;
 }
 
-@include set-theme("light");
+@include set-theme('light');
 
 @mixin ril-palette() {
 	:root {
 		@each $key, $value in $main-palette {
-			@if type-of($value) == "color" {
+			@if type-of($value) == 'color' {
 				--#{$key}: #{$value};
-			} @else if type-of($value) == "map" {
+			} @else if type-of($value) == 'map' {
 				@each $nk, $nv in $value {
-					@if $key == "contrast" {
+					@if $key == 'contrast' {
 						--c-#{$nk}: #{$nv};
 					} @else {
 						--#{$key}-#{$nk}: #{$nv};
@@ -140,11 +140,11 @@ $main-palette: null;
 	@each $theme, $map in $themes {
 		.#{$theme} {
 			@each $key, $value in $map {
-				@if type-of($value) == "color" {
+				@if type-of($value) == 'color' {
 					--#{$key}: #{$value};
-				} @else if type-of($value) == "map" {
+				} @else if type-of($value) == 'map' {
 					@each $nk, $nv in $value {
-						@if $key == "contrast" {
+						@if $key == 'contrast' {
 							--c-#{$nk}: #{$nv};
 						} @else {
 							--#{$key}-#{$nk}: #{$nv};

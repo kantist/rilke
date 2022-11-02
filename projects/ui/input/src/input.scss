@@ -67,11 +67,11 @@
 		}
 	}
 
-	:host-context(ril-form-group.float) {
-		.ril-input-wrap {
-			border-color: var(--c-700);
-		}
-	}
+	// :host-context(ril-form-group.float) {
+	// 	.ril-input-wrap {
+	// 		border-color: var(--c-700);
+	// 	}
+	// }
 
 	&:hover {
 		color: var(--c-700);
