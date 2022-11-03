@@ -47,18 +47,18 @@ html {
 	font-family: $f-family;
 	color: var(--c-800);
 	font-weight: var(--font-weight-md);
-	line-height: var(--font-size-md);
+	line-height: 1.6;
 }
 
 body {
 	height: 100%;
-	background-color: var(--900);
+	background-color: var(--surface);
 
 	mat-bottom-sheet-container {
 		padding: calc(var(--spacer-lg) * 2) !important;
 		color: inherit !important;
 		font-family: inherit !important;
-		background: var(--900) !important;
+		background: var(--surface) !important;
 		border-top-right-radius: var(--radius-md) !important;
 		border-top-left-radius: var(--radius-md) !important;
 	}

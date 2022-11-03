@@ -3,7 +3,7 @@
 @use 'sass:map';
 
 // Custom Palette
-$dark: #212121;
+$dark: #1e1e1e;
 $dark-contrast: color.adjust($dark, $lightness: 100%);
 
 $light: #fff;
@@ -21,6 +21,7 @@ $themes: (
 		700: color.adjust($light, $lightness: 15%),
 		800: color.adjust($light, $lightness: 5%),
 		900: $light,
+		surface: color.adjust($light, $lightness: -5%),
 		contrast: (
 			50: color.adjust($light-contrast, $lightness: -50%),
 			100: color.adjust($light-contrast, $lightness: -55%),
@@ -70,6 +71,7 @@ $themes: (
 		700: color.adjust($dark, $lightness: 15%),
 		800: color.adjust($dark, $lightness: 5%),
 		900: $dark,
+		surface: color.adjust($dark, $lightness: -5%),
 		contrast: (
 			50: color.adjust($dark-contrast, $lightness: -50%),
 			100: color.adjust($dark-contrast, $lightness: -45%),
