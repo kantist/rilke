@@ -22,7 +22,7 @@ import {
 	templateUrl: './tooltip.component.html',
 	styleUrls: ['./tooltip.scss'],
 })
-export class TooltipComponent {
+export class TooltipComponent implements OnInit {
 	_show = false;
 	events = new EventEmitter();
 

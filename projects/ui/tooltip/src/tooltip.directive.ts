@@ -17,7 +17,6 @@ import {
 	EmbeddedViewRef,
 	ApplicationRef,
 	Injector,
-	ComponentRef,
 	OnInit,
 	Output,
 	EventEmitter,
@@ -25,6 +24,7 @@ import {
 	Inject,
 	Optional,
 	SimpleChanges,
+	OnChanges,
 } from '@angular/core';
 import { TooltipComponent } from './tooltip.component';
 import { TooltipOptionsService } from './options.service';
@@ -42,7 +42,7 @@ export interface AdComponent {
 	selector: '[ril-tooltip]',
 	exportAs: 'ril-tooltip',
 })
-export class TooltipDirective {
+export class TooltipDirective implements OnInit, OnDestroy, OnChanges {
 	hideTimeoutId!: number;
 	destroyTimeoutId!: number;
 	hideAfterClickTimeoutId!: number;
