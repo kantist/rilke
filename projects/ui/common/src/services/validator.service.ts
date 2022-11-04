@@ -19,8 +19,8 @@ export class RilValidationService {
 			required: this.lang.error.required,
 			email: this.lang.error.email,
 			pattern: this.lang.error.pattern,
-			min: this.lang.error.please_min + validatorValue.min + this.lang.error.number_enter,
-			max: this.lang.error.please_max + validatorValue.max + this.lang.error.number_enter,
+			min: this.lang.error.min_number + validatorValue.min,
+			max: this.lang.error.max_number + validatorValue.max,
 			minlength: this.lang.error.please_min + validatorValue.requiredLength + this.lang.error.char_enter,
 			maxlength: this.lang.error.please_max + validatorValue.requiredLength + this.lang.error.char_enter,
 		};

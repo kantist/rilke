@@ -22,7 +22,8 @@ export const RIL_TURKISH_LANGUAGE = {
 		please_min: 'Lütfen en az ',
 		please_max: 'Lütfen en fazla ',
 		char_enter: ' karakter girin',
-		number_enter: ' yazın',
+		max_number: 'Girebileceğiniz maksimum değer: ',
+		min_number: 'Girebileceğiniz minimum değer: ',
 	},
 	filedrop: {
 		or_drag_here: 'veya buraya sürükle',
