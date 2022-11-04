@@ -14,7 +14,6 @@ import { RilValidationService } from '@rilke/ui/common';
 	selector: 'ril-form-description',
 	templateUrl: './form-description.html',
 	styleUrls: ['./form-description.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RilFormDescription {
 	_errorMessage: string;
