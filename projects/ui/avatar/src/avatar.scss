@@ -1,6 +1,6 @@
 :host {
 	align-items: center;
-	background: material-palette(grey, 400);
+	background: var(--700);
 	border-radius: 50%;
 	display: flex;
 	font-weight: 600;
@@ -31,8 +31,8 @@
 		transition: 0.5s ease;
 		width: 100%;
 		height: 100%;
-		background: material-palette(grey, 400);
-		color: material-palette(grey, 700);
+		background: var(--700);
+		color: var(--c-700);
 		border-radius: inherit;
 	}
 
@@ -41,7 +41,7 @@
 		justify-content: center;
 		align-items: center;
 		padding: 0;
-		color: material-palette(grey, 700);
+		color: var(--c-700);
 	}
 
 	&.selectable {
@@ -54,7 +54,7 @@
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			color: material-palette(grey, 700);
+			color: var(--700);
 			z-index: 3;
 			opacity: 100%;
 			transition: 0.5s ease;
