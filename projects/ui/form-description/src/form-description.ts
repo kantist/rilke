@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://rilke.ist/license
  */
 
-import { ChangeDetectionStrategy, Component, HostBinding, Input } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { RilValidationService } from '@rilke/ui/common';
 
