@@ -70,9 +70,6 @@ export class RilButton implements OnInit {
 	@HostBinding('class.btn-light') get viewLight() {
 		return this.view === 'light';
 	}
-	@HostBinding('class.btn-dark') get viewDark() {
-		return this.view === 'dark';
-	}
 
 	@HostBinding('class.btn-outline') @Input() outline: boolean;
 	@HostBinding('class.btn-shadow') @Input() shadow: boolean;

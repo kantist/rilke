@@ -259,31 +259,16 @@
 	}
 
 	&.btn-light {
-		background: var(--c-900);
-		color: var(--900);
+		background: var(--c-800);
+		color: var(--800);
 
 		&.btn-outline {
 			background: transparent !important;
-			border-color: var(--c-900);
-			color: var(--c-900);
+			border-color: var(--c-800);
+			color: var(--c-800);
 
 			.btn-loader {
-				border-left: 2px solid var(--c-900);
-			}
-		}
-	}
-
-	&.btn-dark {
-		background: var(--900);
-		color: var(--c-900);
-
-		&.btn-outline {
-			background: transparent !important;
-			border-color: var(--900);
-			color: var(--900);
-
-			.btn-loader {
-				border-left: 2px solid var(--900);
+				border-left: 2px solid var(--c-800);
 			}
 		}
 	}

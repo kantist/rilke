@@ -9,7 +9,7 @@
 			<img *ngIf="isImage" [src]="value.base64" alt="" />
 			<span *ngIf="!isImage" class="file-icon material-icons">insert_drive_file</span>
 			<p class="file-name" ril-truncate>{{ value.name }}</p>
-			<div class="close-icon">
+			<div class="close-icon" *ngIf="!disabled">
 				<span ril-stop-propagation class="material-icons" (click)="cancelFile()">cancel</span>
 			</div>
 		</ng-container>
