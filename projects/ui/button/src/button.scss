@@ -14,6 +14,7 @@
 	white-space: nowrap;
 	appearance: none;
 	color: var(--c-800);
+	transition: all 0.2s ease-in-out;
 
 	&:hover {
 		border-color: transparent;
@@ -188,7 +189,7 @@
 		color: var(--accent-text);
 
 		&.btn-outline {
-			background: transparent !important;
+			background: transparent;
 			border-color: var(--accent-color);
 			color: var(--accent-color);
 
@@ -203,7 +204,7 @@
 		color: var(--success-text);
 
 		&.btn-outline {
-			background: transparent !important;
+			background: transparent;
 			border-color: var(--success-color);
 			color: var(--success-color);
 
@@ -218,7 +219,7 @@
 		color: var(--info-text);
 
 		&.btn-outline {
-			background: transparent !important;
+			background: transparent;
 			border-color: var(--info-color);
 			color: var(--info-color);
 
@@ -233,7 +234,7 @@
 		color: var(--warning-text);
 
 		&.btn-outline {
-			background: transparent !important;
+			background: transparent;
 			border-color: var(--warning-color);
 			color: var(--warning-color);
 
@@ -248,7 +249,7 @@
 		color: var(--error-text);
 
 		&.btn-outline {
-			background: transparent !important;
+			background: transparent;
 			border-color: var(--error-color);
 			color: var(--error-color);
 
@@ -263,7 +264,7 @@
 		color: var(--800);
 
 		&.btn-outline {
-			background: transparent !important;
+			background: transparent;
 			border-color: var(--c-800);
 			color: var(--c-800);
 
@@ -272,8 +273,8 @@
 			}
 
 			&:hover {
-				background: var(--800);
-				color: var(--c-800);
+				background: var(--c-800);
+				color: var(--800);
 			}
 		}
 	}
