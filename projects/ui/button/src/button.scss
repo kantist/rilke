@@ -270,6 +270,11 @@
 			.btn-loader {
 				border-left: 2px solid var(--c-800);
 			}
+
+			&:hover {
+				background: var(--800);
+				color: var(--c-800);
+			}
 		}
 	}
 

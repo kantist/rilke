@@ -1,11 +1,15 @@
 :host {
 	display: block;
 	width: 100%;
+	font-size: var(--font-size-md);
+	line-height: var(--font-lh-md);
+	border-radius: var(--radius-md);
 
 	.ril-input-wrap {
 		align-items: center;
 		background: var(--800);
-		border-radius: var(--radius-md);
+		border: 1px solid var(--800);
+		border-radius: inherit;
 		box-shadow: var(--shadow-sm);
 		cursor: pointer;
 		display: flex;
@@ -22,7 +26,7 @@
 
 		.input-control {
 			background: none;
-			border: none;
+			border: 0;
 			box-shadow: none;
 			color: var(--c-500);
 			cursor: inherit;
