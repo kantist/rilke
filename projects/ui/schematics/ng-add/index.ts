@@ -29,12 +29,14 @@ import { getWorkspace } from '../utility/workspace';
 import { getAppModulePath } from '../utility/ng-ast-utils';
 import { targetBuildNotFoundError } from '../utility/project-targets';
 import { BrowserBuilderOptions } from '../utility/workspace-models';
+import { getProjectFromWorkspace } from '../utility/get-project';
+import { Schema } from './schema';
 
-function addStyleToWorkspaceFile(workspace: workspaces.WorkspaceDefinition): Rule {
+function addStyleToWorkspaceFile(workspace: workspaces.WorkspaceDefinition, options: Schema): Rule {
 	return (host: Tree) => {
-		const project = workspace.projects.get(workspace.extensions.defaultProject as string);
+		const project = getProjectFromWorkspace(workspace, options.project);
 
-		const projectName = workspace.extensions.defaultProject as string;
+		const projectName = options.project;
 
 		if (!project) {
 			throw new SchematicsException(`Project does not exist.`);
@@ -128,11 +130,10 @@ function addAnimationsModuleToNgModule(mainPath: string): Rule {
 // 	};
 // }
 
-export default function (): Rule {
+export default function (options: Schema): Rule {
 	return async (host: Tree, context: SchematicContext) => {
 		const workspace = await getWorkspace(host);
-
-		const project = workspace.projects.get(workspace.extensions.defaultProject as string);
+		const project = getProjectFromWorkspace(workspace, options.project);
 
 		if (!project) {
 			throw new SchematicsException(`Project does not exist.`);
@@ -157,7 +158,7 @@ export default function (): Rule {
 		return chain([
 			addAnimationsModuleToNgModule(buildOptions.main),
 			// addUIModuleToNgModule(buildOptions.main),
-			addStyleToWorkspaceFile(workspace),
+			addStyleToWorkspaceFile(workspace, options),
 			mergeWith(templateSource, MergeStrategy.Overwrite),
 		]);
 	};
