@@ -6,8 +6,9 @@
  * found in the LICENSE file at https://rilke.ist/license
  */
 
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { TOKEN_KEY } from './injections';
 
 @Injectable({
 	providedIn: 'root',
@@ -16,8 +17,8 @@ export class AuthService {
 	private authToken: BehaviorSubject<string>;
 	public token: Observable<string>;
 
-	constructor() {
-		this.authToken = new BehaviorSubject<string>(localStorage.getItem('bearer_token'));
+	constructor(@Inject(TOKEN_KEY) private token_key?: string) {
+		this.authToken = new BehaviorSubject<string>(localStorage.getItem(token_key));
 		this.token = this.authToken.asObservable();
 	}
 
@@ -26,12 +27,12 @@ export class AuthService {
 	}
 
 	setBearerToken(token: string) {
-		localStorage.setItem('bearer_token', token);
+		localStorage.setItem(this.token_key, token);
 		this.authToken.next(token);
 	}
 
 	logout() {
-		localStorage.removeItem('bearer_token');
+		localStorage.removeItem(this.token_key);
 		localStorage.removeItem('lastCall');
 		this.authToken.next(null);
 	}
