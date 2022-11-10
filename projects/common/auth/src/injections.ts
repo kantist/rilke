@@ -8,4 +8,4 @@
 
 import { InjectionToken } from '@angular/core';
 
-export const TOKEN_KEY: InjectionToken<string> = new InjectionToken(null);
+export const TOKEN_KEY: InjectionToken<string> = new InjectionToken('bearerToken');
