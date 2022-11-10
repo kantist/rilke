@@ -17,7 +17,7 @@ export class AuthService {
 	private authToken: BehaviorSubject<string>;
 	public token: Observable<string>;
 
-	constructor(@Inject(TOKEN_KEY) private token_key?: string) {
+	constructor(@Inject(TOKEN_KEY) private token_key: string = 'bearerToken') {
 		this.authToken = new BehaviorSubject<string>(localStorage.getItem(token_key));
 		this.token = this.authToken.asObservable();
 	}
