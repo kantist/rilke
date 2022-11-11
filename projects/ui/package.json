@@ -1,6 +1,6 @@
 {
 	"name": "@rilke/ui",
-	"version": "14.0.13",
+	"version": "14.0.14",
 	"description": "Rilke UI Library",
 	"scripts": {
 		"build": "tsc -p ../../tsconfig.schematics.json",

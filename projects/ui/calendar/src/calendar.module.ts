@@ -19,4 +19,4 @@ import { RilCalendar } from './calendar';
 	exports: [RilCalendar],
 	declarations: [RilCalendar],
 })
-export class RilDatePickerModule {}
+export class RilCalendarModule {}

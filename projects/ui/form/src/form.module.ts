@@ -18,6 +18,7 @@ import { RilTextAreaModule } from '@rilke/ui/text-area';
 import { RilCheckboxModule } from '@rilke/ui/checkbox';
 import { RilFileModule } from '@rilke/ui/file';
 import { RilDatePickerModule } from '@rilke/ui/datepicker';
+import { RilCalendarModule } from '@rilke/ui/calendar';
 import { RilColorPickerModule } from '@rilke/ui/color-picker';
 import { RilRangeSliderModule } from '@rilke/ui/range-slider';
 import { RilRichTextModule } from '@rilke/ui/rich-text';
@@ -33,6 +34,7 @@ import { RilFormGroupModule } from '@rilke/ui/form-group';
 		RilTextAreaModule,
 		RilCheckboxModule,
 		RilDatePickerModule,
+		RilCalendarModule,
 		RilColorPickerModule,
 		RilRangeSliderModule,
 		RilRichTextModule,
@@ -48,6 +50,7 @@ import { RilFormGroupModule } from '@rilke/ui/form-group';
 		RilTextAreaModule,
 		RilCheckboxModule,
 		RilDatePickerModule,
+		RilCalendarModule,
 		RilColorPickerModule,
 		RilRangeSliderModule,
 		RilRichTextModule,
