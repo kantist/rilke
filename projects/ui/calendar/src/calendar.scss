@@ -6,6 +6,13 @@
 }
 
 ::ng-deep {
+	.mat-calendar {
+		box-shadow: var(--shadow-md);
+		background-color: var(--800);
+		border-radius: var(--radius-md) !important;
+		color: var(--c-800);
+	}
+
 	.mat-calendar-arrow {
 		border-top-color: var(--c-800);
 		fill: var(--c-800);
@@ -61,7 +68,7 @@
 	}
 
 	.mat-calendar-body-today:not(.mat-calendar-body-selected) {
-		border-color: #939393;
+		border-color: #939393 !important;
 	}
 
 	.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover
