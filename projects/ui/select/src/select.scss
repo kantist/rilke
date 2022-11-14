@@ -83,6 +83,10 @@
 
 		.mat-option {
 			color: var(--c-800);
+
+			&.mat-selected {
+				background: var(--900);
+			}
 		}
 	}
 

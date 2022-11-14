@@ -6,11 +6,9 @@
  * found in the LICENSE file at https://rilke.ist/license
  */
 
-import { Inject } from '@angular/core';
-import { API_URL } from './injections';
-
 export interface IApiCall {
 	path: string;
+	apiUrl?: string;
 	body?: any;
 	options?: IApiCallOptions;
 	getFullPath?(): string;
@@ -24,11 +22,13 @@ export interface IApiCallOptions {
 
 export class ApiCall implements IApiCall {
 	path: string;
+	apiUrl?: string;
 	body?: any;
 	options?: IApiCallOptions;
 
-	constructor(apiCall: IApiCall, @Inject(API_URL) private apiUrl?: string) {
+	constructor(apiCall: IApiCall) {
 		this.path = apiCall.path;
+		this.apiUrl = apiCall.apiUrl;
 		this.body = apiCall.body;
 		this.options = apiCall.options;
 	}

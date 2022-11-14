@@ -7,20 +7,21 @@
  */
 
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 
 import { ApiCall, IApiCall } from './api.model';
 import { throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { API_URL } from './injections';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class ApiService {
-	constructor(private http: HttpClient) {}
+	constructor(private http: HttpClient, @Inject(API_URL) private apiUrl?: string) {}
 
 	get(apiCall: IApiCall) {
-		apiCall = new ApiCall(apiCall);
+		apiCall = this.setApiCall(apiCall);
 
 		const url = apiCall.getFullPath();
 
@@ -31,7 +32,7 @@ export class ApiService {
 	}
 
 	post(apiCall: IApiCall) {
-		apiCall = new ApiCall(apiCall);
+		apiCall = this.setApiCall(apiCall);
 
 		const url = apiCall.getFullPath();
 
@@ -42,7 +43,7 @@ export class ApiService {
 	}
 
 	patch(apiCall: IApiCall) {
-		apiCall = new ApiCall(apiCall);
+		apiCall = this.setApiCall(apiCall);
 
 		const url = apiCall.getFullPath();
 
@@ -53,7 +54,7 @@ export class ApiService {
 	}
 
 	delete(apiCall: IApiCall) {
-		apiCall = new ApiCall(apiCall);
+		apiCall = this.setApiCall(apiCall);
 
 		const url = apiCall.getFullPath();
 
@@ -64,7 +65,7 @@ export class ApiService {
 	}
 
 	options(apiCall: IApiCall) {
-		apiCall = new ApiCall(apiCall);
+		apiCall = this.setApiCall(apiCall);
 
 		const url = apiCall.getFullPath();
 
@@ -75,7 +76,7 @@ export class ApiService {
 	}
 
 	head(apiCall: IApiCall) {
-		apiCall = new ApiCall(apiCall);
+		apiCall = this.setApiCall(apiCall);
 
 		const url = apiCall.getFullPath();
 
@@ -83,6 +84,14 @@ export class ApiService {
 			tap((res: any) => res),
 			catchError(this.handleError)
 		);
+	}
+
+	setApiCall(apiCall: IApiCall): ApiCall {
+		if (!apiCall.apiUrl) {
+			apiCall.apiUrl = this.apiUrl;
+		}
+
+		return new ApiCall(apiCall);
 	}
 
 	private handleError(error: HttpErrorResponse) {
