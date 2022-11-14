@@ -69,6 +69,18 @@
 			border: 1px solid var(--error-color);
 		}
 	}
+
+	.search-box {
+		ril-input {
+			--radius-md: 0;
+
+			::ng-deep {
+				.ril-input-wrap {
+					border-color: transparent;
+				}
+			}
+		}
+	}
 }
 
 ::ng-deep {

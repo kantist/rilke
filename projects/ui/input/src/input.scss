@@ -43,7 +43,14 @@
 		.input-suffix {
 			color: var(--c-500);
 			flex: none;
-			padding: 0 var(--spacer-md);
+		}
+
+		.input-prefix {
+			padding-left: var(--spacer-md);
+		}
+
+		.input-suffix {
+			padding-right: var(--spacer-md);
 		}
 
 		.input-icon {

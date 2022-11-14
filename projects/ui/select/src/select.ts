@@ -22,6 +22,7 @@ import {
 	ChangeDetectionStrategy,
 	Inject,
 	ViewEncapsulation,
+	ContentChild,
 } from '@angular/core';
 
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormBuilder, FormGroup } from '@angular/forms';
@@ -29,6 +30,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormBuilder, FormGroup } from 
 import { RilSelectOption } from './select-option/select-option';
 
 import { RIL_LANGUAGE } from '@rilke/ui/common';
+import { RilInput } from '@rilke/ui/input';
 
 @Component({
 	selector: 'ril-select',
@@ -45,6 +47,8 @@ import { RIL_LANGUAGE } from '@rilke/ui/common';
 	],
 })
 export class RilSelect implements OnInit, AfterContentInit, ControlValueAccessor {
+	@ContentChild(RilInput) searchBoxRef!: RilInput;
+
 	@Output() valueSelected: EventEmitter<any | any[]>;
 	@Input() search: boolean;
 	@Input() disableOptionCentering: boolean;
@@ -70,6 +74,7 @@ export class RilSelect implements OnInit, AfterContentInit, ControlValueAccessor
 
 	@HostListener('click', ['$event'])
 	toggleSelect() {
+		this.searchBoxRef.onFocus(false);
 		this.matSelect.open();
 	}
 	searchValue: string;
