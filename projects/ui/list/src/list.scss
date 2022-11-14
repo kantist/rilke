@@ -69,27 +69,27 @@
 				}
 			}
 		}
-	}
 
-	.list-check {
-		label {
-			height: 1.4286rem;
+		.list-check {
+			label {
+				height: 1.4286rem;
+			}
+
+			display: flex;
+			align-items: center;
+			margin: 0 1.1429rem;
+
+			input {
+				display: none;
+			}
 		}
 
-		display: flex;
-		align-items: center;
-		margin: 0 1.1429rem;
-
-		input {
-			display: none;
+		.list-option {
+			display: flex;
+			width: 0;
+			margin-right: 3rem;
+			padding-left: 1rem;
 		}
-	}
-
-	.list-option {
-		display: flex;
-		width: 0;
-		margin-right: 3rem;
-		padding-left: 1rem;
 	}
 
 	.skeleton {
