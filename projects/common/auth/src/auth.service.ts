@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://rilke.ist/license
  */
 
-import { Inject, Injectable, Optional } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { TOKEN_KEY } from './injections';
 
@@ -17,7 +17,7 @@ export class AuthService {
 	private authToken: BehaviorSubject<string>;
 	public token: Observable<string>;
 
-	constructor(@Optional() @Inject(TOKEN_KEY) private token_key: string = 'bearerToken') {
+	constructor(@Inject(TOKEN_KEY) private token_key: string = 'bearerToken') {
 		this.authToken = new BehaviorSubject<string>(localStorage.getItem(token_key));
 		this.token = this.authToken.asObservable();
 	}
