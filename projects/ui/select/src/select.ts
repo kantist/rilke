@@ -74,7 +74,9 @@ export class RilSelect implements OnInit, AfterContentInit, ControlValueAccessor
 
 	@HostListener('click', ['$event'])
 	toggleSelect() {
-		this.searchBoxRef.onFocus(false);
+		if (this.searchBoxRef) {
+			this.searchBoxRef.onFocus(false);
+		}
 		this.matSelect.open();
 	}
 	searchValue: string;
