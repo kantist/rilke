@@ -8,6 +8,12 @@
 			.mat-expansion-indicator::after {
 				color: var(--c-700) !important;
 			}
+
+			.mat-expansion-panel-header {
+				&:hover {
+					background: var(--700) !important;
+				}
+			}
 		}
 	}
 }
