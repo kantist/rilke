@@ -44,6 +44,12 @@
 	}
 
 	::ng-deep {
+		ril-list-item {
+			+ ril-list-item {
+				margin-top: var(--spacer-xs);
+			}
+		}
+
 		ril-list-header .columns,
 		.list-row .columns {
 			display: flex;

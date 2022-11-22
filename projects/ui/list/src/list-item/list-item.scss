@@ -8,10 +8,6 @@
 	border-radius: var(--radius-xs);
 	background: var(--800);
 
-	& + {
-		margin-top: var(--spacer-xs);
-	}
-
 	.list-row {
 		display: flex;
 		flex-flow: row nowrap;
