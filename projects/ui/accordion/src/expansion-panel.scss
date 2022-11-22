@@ -11,7 +11,8 @@
 
 			.mat-expansion-panel-header {
 				&:hover {
-					background: var(--700) !important;
+					background: none !important;
+					opacity: 0.8;
 				}
 			}
 		}
