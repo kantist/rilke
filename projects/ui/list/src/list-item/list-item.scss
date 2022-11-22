@@ -8,7 +8,7 @@
 	border-radius: var(--radius-xs);
 	background: var(--800);
 
-	+ & {
+	& + {
 		margin-top: var(--spacer-xs);
 	}
 
