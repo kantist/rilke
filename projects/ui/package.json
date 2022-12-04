@@ -1,6 +1,6 @@
 {
 	"name": "@rilke/ui",
-	"version": "15.0.0",
+	"version": "15.0.1",
 	"description": "Rilke UI Library",
 	"scripts": {
 		"build": "tsc -p ../../tsconfig.schematics.json",
@@ -35,8 +35,8 @@
 		"@angular/common": "15.0.2"
 	},
 	"devDependencies": {
-		"@angular/core": "15.0.1",
-		"@angular/common": "15.0.1",
+		"@angular/core": "15.0.2",
+		"@angular/common": "15.0.2",
 		"tslib": "2.4.0",
 		"copyfiles": "file:../../node_modules/copyfiles",
 		"typescript": "file:../../node_modules/typescript"

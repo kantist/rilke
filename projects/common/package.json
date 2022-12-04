@@ -1,6 +1,6 @@
 {
 	"name": "@rilke/common",
-	"version": "15.0.0",
+	"version": "15.0.1",
 	"description": "Rilke Common Library",
 	"keywords": [
 		"angular",
@@ -28,8 +28,8 @@
 		"@angular/common": "15.0.2"
 	},
 	"devDependencies": {
-		"@angular/core": "15.0.1",
-		"@angular/common": "15.0.1",
+		"@angular/core": "15.0.2",
+		"@angular/common": "15.0.2",
 		"tslib": "2.4.0"
 	}
 }
