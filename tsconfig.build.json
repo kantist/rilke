@@ -4,8 +4,6 @@
 	"compilerOptions": {
 		"outDir": "./dist/out-tsc/lib",
 		"declaration": true,
-		"inlineSourceMap": true,
-		"inlineSources": true,
 		"paths": {
 			"@rilke/ui": ["./dist/ui"],
 			"@rilke/ui/*": ["./dist/ui/*"],

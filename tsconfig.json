@@ -44,8 +44,7 @@
 		}
 	},
 	"angularCompilerOptions": {
-		"enableIvy": false,
-		"compilationMode": "full",
+		"compilationMode": "partial",
 		"preserveWhitespaces": false,
 		"annotateForClosureCompiler": false,
 		"skipTemplateCodegen": true,
