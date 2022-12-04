@@ -52,7 +52,6 @@ export class RilRangeSlider implements ControlValueAccessor, OnInit {
 	@Input() showTicks: boolean;
 	@Input() step: number;
 	@Input() label: boolean;
-	@Input() tickInterval: number;
 
 	constructor(public element: ElementRef) {
 		this.simpleSlider = true;
@@ -68,7 +67,6 @@ export class RilRangeSlider implements ControlValueAccessor, OnInit {
 		this.showTicks = true;
 		this.step = 1;
 		this.label = false;
-		this.tickInterval = 1;
 	}
 
 	ngOnInit() {}
