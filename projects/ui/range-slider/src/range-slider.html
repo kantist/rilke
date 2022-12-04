@@ -1,11 +1,3 @@
-<mat-slider
-	[disabled]="disabled"
-	[invert]="invert"
-	[max]="max"
-	[min]="min"
-	[step]="step"
-	[thumbLabel]="label"
-	[value]="value"
-	[vertical]="vertical"
->
+<mat-slider [disabled]="disabled" [max]="max" [min]="min" [step]="step" [discrete]="label" [showTickMarks]="showTicks">
+	<input matSliderThumb [value]="value" />
 </mat-slider>

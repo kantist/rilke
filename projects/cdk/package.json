@@ -1,6 +1,6 @@
 {
 	"name": "@rilke/cdk",
-	"version": "14.0.0",
+	"version": "15.0.0",
 	"description": "Rilke CDK Library",
 	"keywords": [
 		"angular",
@@ -26,12 +26,12 @@
 		"tslib": "2.4.0"
 	},
 	"peerDependencies": {
-		"@angular/core": "14.1.2",
-		"@angular/common": "14.1.2"
+		"@angular/core": "15.0.2",
+		"@angular/common": "15.0.2"
 	},
 	"devDependencies": {
-		"@angular/core": "14.1.2",
-		"@angular/common": "14.1.2",
+		"@angular/core": "15.0.2",
+		"@angular/common": "15.0.2",
 		"tslib": "2.4.0"
 	}
 }

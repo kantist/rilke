@@ -47,13 +47,11 @@ export class RilRangeSlider implements ControlValueAccessor, OnInit {
 	onChange: any = () => {};
 	onTouched: any = () => {};
 
-	@Input() invert: boolean;
 	@Input() max: number;
 	@Input() min: number;
 	@Input() showTicks: boolean;
 	@Input() step: number;
 	@Input() label: boolean;
-	@Input() vertical: boolean;
 	@Input() tickInterval: number;
 
 	constructor(public element: ElementRef) {
@@ -65,13 +63,11 @@ export class RilRangeSlider implements ControlValueAccessor, OnInit {
 		this.required = false;
 		this.innerValue = '';
 
-		this.invert = false;
 		this.max = 100;
 		this.min = 0;
 		this.showTicks = true;
 		this.step = 1;
 		this.label = false;
-		this.vertical = false;
 		this.tickInterval = 1;
 	}
 

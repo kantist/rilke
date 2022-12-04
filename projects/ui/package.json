@@ -1,6 +1,6 @@
 {
 	"name": "@rilke/ui",
-	"version": "14.0.25",
+	"version": "15.0.0",
 	"description": "Rilke UI Library",
 	"scripts": {
 		"build": "tsc -p ../../tsconfig.schematics.json",
@@ -25,18 +25,18 @@
 		"url": "https://github.com/kantist/rilke.git"
 	},
 	"dependencies": {
-		"@angular/cdk": "14.1.2",
-		"@angular/material": "14.1.2",
+		"@angular/cdk": "15.0.1",
+		"@angular/material": "15.0.1",
 		"ngx-color": "8.0.2",
 		"tslib": "2.4.0"
 	},
 	"peerDependencies": {
-		"@angular/core": "14.1.2",
-		"@angular/common": "14.1.2"
+		"@angular/core": "15.0.2",
+		"@angular/common": "15.0.2"
 	},
 	"devDependencies": {
-		"@angular/core": "14.1.2",
-		"@angular/common": "14.1.2",
+		"@angular/core": "15.0.1",
+		"@angular/common": "15.0.1",
 		"tslib": "2.4.0",
 		"copyfiles": "file:../../node_modules/copyfiles",
 		"typescript": "file:../../node_modules/typescript"
