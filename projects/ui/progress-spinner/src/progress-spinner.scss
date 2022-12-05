@@ -6,12 +6,12 @@
 	align-content: center;
 	align-items: center;
 
-	.mat-progress-spinner {
+	.mat-mdc-progress-spinner {
 		stroke: var(--800);
 	}
 
-	.mat-progress-spinner circle,
-	.mat-spinner circle {
+	.mat-mdc-progress-spinner circle,
+	.mat-mdc-progress-spinner circle {
 		stroke: inherit;
 	}
 

@@ -82,7 +82,7 @@
 		}
 	}
 
-	.mat-select-panel {
+	.mat-mdc-select-panel {
 		background: var(--800);
 		border-radius: var(--radius-md) !important;
 
@@ -91,25 +91,25 @@
 			scrollbar-width: none;
 		}
 
-		.mat-option {
+		.mat-mdc-option {
 			color: var(--c-800);
 
-			&.mat-selected {
+			&.mat-mdc-option-active {
 				background: var(--900);
 			}
 		}
 	}
 
-	.mat-select-value {
+	.mat-mdc-select-value {
 		max-width: 100%;
 		color: var(--c-800);
 
-		.mat-select-placeholder {
+		.mat-mdc-select-placeholder {
 			color: var(--700);
 		}
 	}
 
-	.mat-select-arrow {
+	.mat-mdc-select-arrow {
 		color: var(--c-800);
 	}
 }
