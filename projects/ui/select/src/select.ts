@@ -31,6 +31,7 @@ import { RilSelectOption } from './select-option/select-option';
 
 import { RIL_LANGUAGE } from '@rilke/ui/common';
 import { RilInput } from '@rilke/ui/input';
+import { MatSelect } from '@angular/material/select';
 
 @Component({
 	selector: 'ril-select',
@@ -63,10 +64,9 @@ export class RilSelect implements OnInit, AfterContentInit, ControlValueAccessor
 	@Output() openedChange: EventEmitter<boolean>;
 	@Output() selectionChange: EventEmitter<any>;
 
-	@ContentChildren(RilSelectOption)
-	optionQueries: QueryList<RilSelectOption>;
+	@ContentChildren(RilSelectOption) optionQueries: QueryList<RilSelectOption>;
 
-	@ViewChild('matSelect') matSelect;
+	@ViewChild('matSelect') matSelect: MatSelect;
 
 	@HostBinding('class.has-value') @Input('value') innerValue: any;
 	onChange: any = () => {};
