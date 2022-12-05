@@ -63,11 +63,18 @@ body {
 		border-top-left-radius: var(--radius-md) !important;
 	}
 
-	snack-bar-container {
+	.mdc-snackbar__surface {
 		background: transparent !important;
-		padding: 0 !important;
 		overflow: hidden !important;
-		box-shadow: var(--shadow-md);
+		padding: 0 !important;
+		box-shadow: none !important;
+		border-radius: var(--radius-md) !important;
+
+		.mat-mdc-snack-bar-label {
+			margin-top: var(--spacer-xs);
+			box-shadow: var(--shadow-md);
+			padding: 0 !important;
+		}
 	}
 
 	.modal-overlay-wrapper {
