@@ -6,7 +6,8 @@
  * found in the LICENSE file at https://rilke.ist/license
  */
 
-export * from './api/src';
-export * from './auth/src';
-export * from './seo/src';
-export * from './utility/src';
+export default {};
+// export * from './api';
+// export * from './auth';
+// export * from './seo';
+// export * from './utility';
