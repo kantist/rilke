@@ -38,9 +38,9 @@
 		"useDefineForClassFields": false,
 		"forceConsistentCasingInFileNames": true,
 		"paths": {
-			"@rilke/common/*": ["projects/common/*/src", "projects/common/src"],
-			"@rilke/ui/*": ["projects/ui/*/src", "projects/ui/src"],
-			"@rilke/cdk/*": ["projects/cdk/*/src", "projects/cdk/src"]
+			"@rilke/common/*": ["projects/common/*", "projects/common"],
+			"@rilke/ui/*": ["projects/ui/*", "projects/ui"],
+			"@rilke/cdk/*": ["projects/cdk/*", "projects/cdk"]
 		}
 	},
 	"angularCompilerOptions": {
