@@ -16,6 +16,7 @@ import {
 	OnChanges,
 	Inject,
 	ChangeDetectionStrategy,
+	ChangeDetectorRef,
 } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RIL_LANGUAGE } from '@rilke/ui/common';
@@ -41,7 +42,12 @@ export class RilPagination implements OnInit, OnChanges {
 	pages: Array<number>;
 	dynamicPages: Array<number>;
 
-	constructor(@Inject(RIL_LANGUAGE) public lang, private router: Router, private route: ActivatedRoute) {
+	constructor(
+		@Inject(RIL_LANGUAGE) public lang,
+		private router: Router,
+		private route: ActivatedRoute,
+		private cdr: ChangeDetectorRef
+	) {
 		this.pagesNumber = 1;
 		this.pageNum = 1;
 
@@ -51,6 +57,11 @@ export class RilPagination implements OnInit, OnChanges {
 
 		this.firstText = this.lang.pagination.first;
 		this.lastText = this.lang.pagination.last;
+	}
+
+	ngOnInit() {
+		this.pages = Array.from(Array(this.pagesNumber), (x, i) => i + 1);
+		this.dynamicPages = this.pages.slice(0, 5);
 	}
 
 	public changePage(page: number) {
@@ -63,6 +74,7 @@ export class RilPagination implements OnInit, OnChanges {
 		}
 
 		this.goPage();
+		this.cdr.detectChanges();
 	}
 
 	public lastPage() {
@@ -87,11 +99,6 @@ export class RilPagination implements OnInit, OnChanges {
 		} else {
 			this.pageChange.emit(this.pageNum);
 		}
-	}
-
-	ngOnInit() {
-		this.pages = Array.from(Array(this.pagesNumber), (x, i) => i + 1);
-		this.dynamicPages = this.pages.slice(0, 5);
 	}
 
 	ngOnChanges() {
