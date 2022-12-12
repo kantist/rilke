@@ -7,7 +7,7 @@
 		"start": "ng serve",
 		"*** DEV ***": "",
 		"build:dev": "ng build --configuration development",
-		"watch:dev": "ng build --watch --configuration development",
+		"watch:dev": "ng build ui --watch --configuration development",
 		"*** BUILD ***": "",
 		"build": "ng build common && ng build ui && ng build cdk",
 		"build:common": "ng build common",

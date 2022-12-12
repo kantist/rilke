@@ -17,6 +17,7 @@ import {
 	Inject,
 	ChangeDetectionStrategy,
 	ChangeDetectorRef,
+	AfterViewChecked,
 } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RIL_LANGUAGE } from '@rilke/ui/common';
@@ -27,7 +28,7 @@ import { RIL_LANGUAGE } from '@rilke/ui/common';
 	styleUrls: ['./pagination.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RilPagination implements OnInit, OnChanges {
+export class RilPagination implements OnInit, OnChanges, AfterViewChecked {
 	@HostBinding('class.ril-pagination') true = true;
 
 	@Input() pageRouter: boolean;
@@ -60,8 +61,11 @@ export class RilPagination implements OnInit, OnChanges {
 	}
 
 	ngOnInit() {
+		this.setPages();
+	}
+
+	setPages() {
 		this.pages = Array.from(Array(this.pagesNumber), (x, i) => i + 1);
-		this.dynamicPages = this.pages.slice(0, 5);
 	}
 
 	public changePage(page: number) {
@@ -74,7 +78,6 @@ export class RilPagination implements OnInit, OnChanges {
 		}
 
 		this.goPage();
-		this.cdr.detectChanges();
 	}
 
 	public lastPage() {
@@ -102,7 +105,12 @@ export class RilPagination implements OnInit, OnChanges {
 	}
 
 	ngOnChanges() {
-		this.ngOnInit();
+		this.setPages();
+		this.changePage(this.pageNum);
+	}
+
+	ngAfterViewChecked() {
+		this.cdr.detectChanges();
 	}
 
 	getLast(): number {
