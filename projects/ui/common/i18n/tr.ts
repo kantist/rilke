@@ -25,6 +25,10 @@ export const RIL_TURKISH_LANGUAGE = {
 		max_number: 'Girebileceğiniz maksimum değer: ',
 		min_number: 'Girebileceğiniz minimum değer: ',
 	},
+	pagination: {
+		first: 'İlk',
+		last: 'Son',
+	},
 	filedrop: {
 		or_drag_here: 'veya buraya sürükle',
 		drop_file_here: 'Dosyayı buraya bırakın',

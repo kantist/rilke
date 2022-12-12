@@ -22,6 +22,12 @@ export const RIL_ENGLISH_LANGUAGE = {
 		please_min: 'Please enter up to ',
 		please_max: 'Please enter at least ',
 		char_enter: ' characters',
+		max_number: 'The maximum value you can enter: ',
+		min_number: 'The minimum value you can enter: ',
+	},
+	pagination: {
+		first: 'First',
+		last: 'Last',
 	},
 	filedrop: {
 		or_drag_here: 'or drag it here',
