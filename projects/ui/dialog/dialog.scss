@@ -2,6 +2,7 @@
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	padding: var(--spacer-md);
 
 	.text {
 		margin-bottom: 2rem;
