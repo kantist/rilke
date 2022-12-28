@@ -12,7 +12,9 @@
 		.ril-switcher-handle {
 			align-items: center;
 			background: var(--800);
-			border-radius: var(--radius-md);
+			border: 1px solid var(--800);
+			border-radius: 1.5rem;
+			box-shadow: var(--shadow-sm);
 			cursor: inherit;
 			display: flex;
 			height: 1.4rem;
@@ -29,7 +31,7 @@
 			}
 
 			.check-detector {
-				background: var(--300);
+				background: var(--c-100);
 				border-radius: 50%;
 				display: block;
 				height: 0.9rem;
@@ -54,10 +56,6 @@
 		&:hover {
 			.ril-switcher-handle {
 				background: var(--600);
-
-				.check-detector {
-					background: var(--50);
-				}
 			}
 
 			.ril-switcher-label {
