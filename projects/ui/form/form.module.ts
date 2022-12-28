@@ -22,6 +22,7 @@ import { RilCalendarModule } from '@rilke/ui/calendar';
 import { RilColorPickerModule } from '@rilke/ui/color-picker';
 import { RilRangeSliderModule } from '@rilke/ui/range-slider';
 import { RilRichTextModule } from '@rilke/ui/rich-text';
+import { RilSwitcherModule } from '@rilke/ui/switcher';
 import { RilFormGroupModule } from '@rilke/ui/form-group';
 
 @NgModule({
@@ -38,6 +39,7 @@ import { RilFormGroupModule } from '@rilke/ui/form-group';
 		RilColorPickerModule,
 		RilRangeSliderModule,
 		RilRichTextModule,
+		RilSwitcherModule,
 		RilFileModule,
 		RilFormGroupModule,
 		RilFormDescriptionModule,
@@ -54,6 +56,7 @@ import { RilFormGroupModule } from '@rilke/ui/form-group';
 		RilColorPickerModule,
 		RilRangeSliderModule,
 		RilRichTextModule,
+		RilSwitcherModule,
 		RilFileModule,
 		RilFormGroupModule,
 		RilFormDescriptionModule,

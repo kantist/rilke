@@ -18,4 +18,4 @@ import { RilSwitcher } from './switcher';
 	exports: [RilSwitcher],
 	declarations: [RilSwitcher],
 })
-export class RilSelectModule {}
+export class RilSwitcherModule {}
