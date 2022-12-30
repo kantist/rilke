@@ -9,6 +9,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import {
 	ChangeDetectionStrategy,
+	ChangeDetectorRef,
 	Component,
 	forwardRef,
 	HostBinding,
@@ -73,7 +74,11 @@ export class RilFileDrop implements ControlValueAccessor, OnInit {
 	onChange: any = () => {};
 	onTouched: any = () => {};
 
-	constructor(@Inject(RIL_LANGUAGE) public lang, @Inject(PLATFORM_ID) public platformId: any) {
+	constructor(
+		@Inject(RIL_LANGUAGE) public lang,
+		@Inject(PLATFORM_ID) public platformId: any,
+		private cdr: ChangeDetectorRef
+	) {
 		this.rilFileUpload = true;
 		this.readonly = false;
 		this.disabled = false;
@@ -139,6 +144,8 @@ export class RilFileDrop implements ControlValueAccessor, OnInit {
 						file: file,
 					})
 				);
+
+				this.cdr.detectChanges();
 			};
 
 			reader.readAsDataURL(file);

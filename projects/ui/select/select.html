@@ -24,7 +24,5 @@
 			></ril-input>
 		</ril-form-group>
 	</div>
-	<mat-option *ngFor="let option of filtered_options" [value]="option.value" [innerHTML]="option.content">
-		{{ option.content }}
-	</mat-option>
+	<mat-option *ngFor="let option of filtered_options" [value]="option.value">{{ option.content }}</mat-option>
 </mat-select>

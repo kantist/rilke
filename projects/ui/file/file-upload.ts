@@ -6,7 +6,16 @@
  * found in the LICENSE file at https://rilke.ist/license
  */
 
-import { ChangeDetectionStrategy, Component, forwardRef, HostBinding, Inject, Input, OnInit } from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	ChangeDetectorRef,
+	Component,
+	forwardRef,
+	HostBinding,
+	Inject,
+	Input,
+	OnInit,
+} from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { RIL_LANGUAGE } from '@rilke/ui/common';
 import { IFile, RilFile } from './file.model';
@@ -40,7 +49,7 @@ export class RilFileUpload implements ControlValueAccessor, OnInit {
 	onChange: any = () => {};
 	onTouched: any = () => {};
 
-	constructor(@Inject(RIL_LANGUAGE) public lang) {
+	constructor(@Inject(RIL_LANGUAGE) public lang, private cdr: ChangeDetectorRef) {
 		this.rilFileUpload = true;
 		this.readonly = false;
 		this.disabled = false;
@@ -118,6 +127,8 @@ export class RilFileUpload implements ControlValueAccessor, OnInit {
 					base64: reader.result,
 					file: file,
 				});
+
+				this.cdr.detectChanges();
 			};
 
 			reader.readAsDataURL(file);
