@@ -21,7 +21,7 @@ import { MatMenuTrigger } from '@angular/material/menu';
 type MenuPositionX = 'before' | 'after';
 
 @Component({
-	selector: 'ril-menu',
+	selector: 'ril-menu, [ril-menu]',
 	templateUrl: './menu.html',
 	styleUrls: ['./menu.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
