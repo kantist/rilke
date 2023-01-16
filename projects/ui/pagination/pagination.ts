@@ -33,6 +33,7 @@ export class RilPagination implements OnInit, OnChanges, AfterViewChecked {
 
 	@Input() pageRouter: boolean;
 	@Input() pagesNumber: number;
+	@Input() skipLocationChange: boolean;
 	@Input() pageNum: number;
 
 	@Input() firstText: string;
@@ -51,6 +52,7 @@ export class RilPagination implements OnInit, OnChanges, AfterViewChecked {
 	) {
 		this.pagesNumber = 1;
 		this.pageNum = 1;
+		this.skipLocationChange = false;
 
 		this.pageRouter = false;
 
@@ -98,7 +100,7 @@ export class RilPagination implements OnInit, OnChanges, AfterViewChecked {
 				relativeTo: this.route,
 				queryParamsHandling: 'merge',
 				queryParams: { page: this.pageNum },
-				skipLocationChange: true,
+				skipLocationChange: this.skipLocationChange,
 			});
 		} else {
 			this.pageChange.emit(this.pageNum);
