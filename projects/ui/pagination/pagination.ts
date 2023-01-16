@@ -98,6 +98,7 @@ export class RilPagination implements OnInit, OnChanges, AfterViewChecked {
 				relativeTo: this.route,
 				queryParamsHandling: 'merge',
 				queryParams: { page: this.pageNum },
+				skipLocationChange: true,
 			});
 		} else {
 			this.pageChange.emit(this.pageNum);
