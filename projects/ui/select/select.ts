@@ -32,7 +32,6 @@ import { RilSelectOption } from './select-option/select-option';
 import { RIL_LANGUAGE } from '@rilke/ui/common';
 import { RilInput } from '@rilke/ui/input';
 import { MatSelect } from '@angular/material/select';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
 	selector: 'ril-select',
@@ -86,7 +85,7 @@ export class RilSelect implements OnInit, AfterContentInit, ControlValueAccessor
 	options: any[];
 	filtered_options: any[];
 
-	constructor(@Inject(RIL_LANGUAGE) public lang, private formBuilder: FormBuilder, private sanitizer: DomSanitizer) {
+	constructor(@Inject(RIL_LANGUAGE) public lang, private formBuilder: FormBuilder) {
 		this.disableOptionCentering = false;
 		this.disableRipple = true;
 		this.disabled = false;
@@ -130,10 +129,6 @@ export class RilSelect implements OnInit, AfterContentInit, ControlValueAccessor
 		this.filtered_options = this.options.filter((item) =>
 			item.content.toLocaleUpperCase('tr-TR').includes(phrase.toLocaleUpperCase('tr-TR'))
 		);
-	}
-
-	sanitize(html) {
-		return this.sanitizer.bypassSecurityTrustHtml(html);
 	}
 
 	setDefault(status) {
