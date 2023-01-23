@@ -15,6 +15,7 @@ import {
 	Output,
 	EventEmitter,
 	ChangeDetectionStrategy,
+	ChangeDetectorRef,
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -45,7 +46,7 @@ export class RilSwitcher implements OnInit {
 	onChange: any = () => {};
 	onTouched: any = () => {};
 
-	constructor() {
+	constructor(private cdr: ChangeDetectorRef) {
 		this.valueChanged = new EventEmitter();
 		this._value = false;
 		this.label = '';
@@ -63,8 +64,9 @@ export class RilSwitcher implements OnInit {
 		this._value = val;
 		this.valueChanged.emit(val);
 		this.onChange(val);
-		this.switch(val);
 		this.onTouched();
+
+		this.cdr.detectChanges();
 	}
 
 	registerOnChange(fn) {
