@@ -63,6 +63,7 @@ export class RilSwitcher implements OnInit {
 		this._value = val;
 		this.valueChanged.emit(val);
 		this.onChange(val);
+		this.switch(val);
 		this.onTouched();
 	}
 
