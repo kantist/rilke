@@ -78,9 +78,7 @@ export class RilSwitcher implements OnInit {
 	}
 
 	writeValue(value) {
-		if (value) {
-			this.value = value;
-		}
+		this.value = value;
 	}
 
 	switch(bool: boolean) {
