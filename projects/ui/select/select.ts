@@ -23,7 +23,6 @@ import {
 	Inject,
 	ViewEncapsulation,
 	ContentChild,
-	ChangeDetectorRef,
 } from '@angular/core';
 
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormBuilder, FormGroup } from '@angular/forms';
@@ -86,7 +85,7 @@ export class RilSelect implements OnInit, AfterContentInit, ControlValueAccessor
 	options: any[];
 	filtered_options: any[];
 
-	constructor(@Inject(RIL_LANGUAGE) public lang, private formBuilder: FormBuilder, private cdr: ChangeDetectorRef) {
+	constructor(@Inject(RIL_LANGUAGE) public lang, private formBuilder: FormBuilder) {
 		this.disableOptionCentering = false;
 		this.disableRipple = true;
 		this.disabled = false;
@@ -153,8 +152,6 @@ export class RilSelect implements OnInit, AfterContentInit, ControlValueAccessor
 
 			this.selectionChange.emit(value);
 			this.onChange(value);
-
-			this.cdr.detectChanges();
 		}
 	}
 
@@ -169,8 +166,6 @@ export class RilSelect implements OnInit, AfterContentInit, ControlValueAccessor
 			this.innerValue = v;
 			this.selectionChange.emit(v);
 			this.onChange(v);
-
-			this.cdr.detectChanges();
 		}
 	}
 }
