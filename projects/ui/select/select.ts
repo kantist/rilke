@@ -149,7 +149,9 @@ export class RilSelect implements OnInit, AfterContentInit, ControlValueAccessor
 	writeValue(value: string | string[]) {
 		if (value !== this.innerValue) {
 			this.innerValue = value;
-			this.value = value;
+
+			this.selectionChange.emit(value);
+			this.onChange(value);
 		}
 	}
 
