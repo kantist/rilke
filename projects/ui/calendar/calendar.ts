@@ -8,6 +8,7 @@
 
 import { Component, Input, OnInit, forwardRef, ChangeDetectionStrategy, HostBinding } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { DateRange } from '@angular/material/datepicker';
 
 @Component({
 	selector: 'ril-calendar',
@@ -25,7 +26,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class RilCalendar implements OnInit, ControlValueAccessor {
 	@HostBinding('class.input-disabled') @Input() disabled: boolean;
 	@Input('value') innerValue: string;
-
+	@Input() selected: DateRange<Date> | Date | null;
 	@Input() comparisonStart: Date | null;
 	@Input() comparisonEnd: Date | null;
 
