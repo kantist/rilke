@@ -30,6 +30,8 @@ export class RilCalendar implements OnInit, ControlValueAccessor {
 	@Input() width: string;
 	@Input() direction: string;
 	@Input() showHex: boolean;
+	@Input() comparisonStart: Date | null;
+	@Input() comparisonEnd: Date | null;
 
 	get value() {
 		if (this.innerValue) {
