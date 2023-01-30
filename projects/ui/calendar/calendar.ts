@@ -26,10 +26,6 @@ export class RilCalendar implements OnInit, ControlValueAccessor {
 	@HostBinding('class.input-disabled') @Input() disabled: boolean;
 	@Input('value') innerValue: string;
 
-	@Input() backgroundColor: string;
-	@Input() width: string;
-	@Input() direction: string;
-	@Input() showHex: boolean;
 	@Input() comparisonStart: Date | null;
 	@Input() comparisonEnd: Date | null;
 
