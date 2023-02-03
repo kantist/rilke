@@ -17,7 +17,8 @@
 		<ng-container *ngIf="value && isUrl">
 			<img *ngIf="isImage" [src]="value" alt="" />
 			<span *ngIf="!isImage" class="file-icon material-icons">insert_drive_file</span>
-			<p class="file-name" ril-truncate>unkown</p>
+			<p class="file-name" ril-truncate *ngIf="!fileName">unkown</p>
+			<p class="file-name" ril-truncate *ngIf="fileName">{{ fileName }}</p>
 			<div class="close-icon" *ngIf="!disabled">
 				<span ril-stop-propagation class="material-icons" (click)="cancelFile()">cancel</span>
 			</div>

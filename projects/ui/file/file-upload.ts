@@ -42,6 +42,7 @@ export class RilFileUpload implements ControlValueAccessor, OnInit {
 	@HostBinding('class.has-value') @Input('value') innerValue: IFile;
 
 	@Input() isImage: boolean;
+	@Input() fileName: string;
 	isUrl: boolean;
 
 	@Input() selectFileNotice: string;
