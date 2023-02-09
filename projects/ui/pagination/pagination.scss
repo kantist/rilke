@@ -12,14 +12,14 @@
 			.page-link {
 				background: var(--700);
 				border-color: var(--700);
-				border-left: 1px solid #353535;
+				border-left: 1px solid var(--900);
 				color: var(--c-500);
 				padding: 0.8rem 1.6rem;
 				cursor: pointer;
+				box-shadow: var(--shadow-sm);
 
 				&:hover {
-					background: var(--500);
-					border-color: var(--500);
+					background: var(--surface);
 					color: var(--c-500);
 				}
 			}
@@ -42,8 +42,7 @@
 
 		.page-item.active {
 			.page-link {
-				background: var(--500);
-				border-color: transparent;
+				background: var(--surface);
 				color: var(--c-500);
 			}
 		}
