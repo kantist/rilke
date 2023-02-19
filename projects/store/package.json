@@ -1,10 +1,10 @@
 {
 	"name": "@rilke/store",
-	"version": "15.0.0",
+	"version": "15.0.1",
 	"description": "Rilke State Management Library",
 	"scripts": {
 		"build": "tsc -p tsconfig.schematics.json",
-		"postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/store/"
+		"postbuild": "copyfiles schematics/*/schema.json schematics/*/files/*/** schematics/collection.json ../../dist/store/"
 	},
 	"keywords": [
 		"angular",
