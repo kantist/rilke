@@ -3,7 +3,7 @@
 	"version": "15.0.38",
 	"description": "Rilke UI Library",
 	"scripts": {
-		"build": "tsc -p ../../tsconfig.schematics.json",
+		"build": "tsc -p tsconfig.schematics.json",
 		"postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/ui/ && copyfiles -f schematics/ng-add/files/style/** ../../dist/ui/schematics/ng-add/files/style && copyfiles -f schematics/ng-add/files/font/*/** ../../dist/ui/schematics/ng-add/files/font/trenda"
 	},
 	"keywords": [

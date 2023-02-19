@@ -16,6 +16,8 @@
 		"watch:ui": "ng build ui --watch",
 		"build:cdk": "ng build cdk",
 		"watch:cdk": "ng build cdk --watch",
+		"build:store": "ng build store",
+		"watch:store": "ng build store --watch",
 		"*** TEST ***": "",
 		"test": "ng test",
 		"*** LINTER ***": "",
@@ -25,7 +27,8 @@
 		"lint:styles": "stylelint \"**/*.scss\"",
 		"lint:styles:fix": "stylelint \"**/*.scss\" --fix",
 		"*** SCHEMATICS ***": "",
-		"build:schematics": "cd projects/ui && npm run build"
+		"build:schematics:ui": "cd projects/ui && npm run build",
+		"build:schematics:store": "cd projects/store && npm run build"
 	},
 	"dependencies": {
 		"@angular/animations": "~15.0.2",

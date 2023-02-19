@@ -1,0 +1,44 @@
+{
+	"name": "@rilke/store",
+	"version": "15.0.0",
+	"description": "Rilke State Management Library",
+	"scripts": {
+		"build": "tsc -p tsconfig.schematics.json",
+		"postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/store/"
+	},
+	"keywords": [
+		"angular",
+		"state management",
+		"architecture",
+		"rilke",
+		"store",
+		"state",
+		"ngrx",
+		"rilke store",
+		"rilke architecture"
+	],
+	"author": "Kant Yazılım A.Ş.",
+	"license": "MIT",
+	"homepage": "https://rilke.ist",
+	"bugs": {
+		"url": "https://github.com/kantist/rilke/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kantist/rilke.git"
+	},
+	"dependencies": {
+		"tslib": "2.4.0"
+	},
+	"peerDependencies": {
+		"@angular/core": "15.0.2",
+		"@angular/common": "15.0.2"
+	},
+	"devDependencies": {
+		"@angular/core": "15.0.2",
+		"@angular/common": "15.0.2",
+		"tslib": "2.4.0",
+		"copyfiles": "file:../../node_modules/copyfiles",
+		"typescript": "file:../../node_modules/typescript"
+	}
+}

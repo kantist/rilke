@@ -10,7 +10,9 @@
 			"@rilke/common": ["./dist/common"],
 			"@rilke/common/*": ["./dist/common/*"],
 			"@rilke/cdk": ["./dist/cdk"],
-			"@rilke/cdk/*": ["./dist/cdk/*"]
+			"@rilke/cdk/*": ["./dist/cdk/*"],
+			"@rilke/store": ["./dist/store"],
+			"@rilke/store/*": ["./dist/store/*"]
 		}
 	}
 }

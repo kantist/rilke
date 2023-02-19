@@ -1,0 +1,12 @@
+import { NgModule } from '@angular/core';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+
+import { environment } from '@env';
+
+export const metaReducers = environment.production ? [] : [];
+
+@NgModule({
+	imports: [StoreModule.forRoot({}, { metaReducers }), EffectsModule.forRoot([])],
+})
+export class AppStore {}

@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://rilke.ist/license
  */
 
-import * as ts from '../third_party/github.com/Microsoft/TypeScript/lib/typescript';
+import * as ts from '../third_party/files/typescript';
 import { Change } from './change';
 /**
  * Add Import `import { symbolName } from fileName` if the import doesn't exit
@@ -17,7 +17,13 @@ import { Change } from './change';
  * @param isDefault (if true, import follows style for importing default exports)
  * @return Change
  */
-export declare function insertImport(source: ts.SourceFile, fileToEdit: string, symbolName: string, fileName: string, isDefault?: boolean): Change;
+export declare function insertImport(
+	source: ts.SourceFile,
+	fileToEdit: string,
+	symbolName: string,
+	fileName: string,
+	isDefault?: boolean
+): Change;
 /**
  * Find all nodes from the AST in the subtree of node of SyntaxKind kind.
  * @param node
@@ -37,7 +43,12 @@ export declare function findNodes(node: ts.Node, kind: ts.SyntaxKind, max?: numb
  * the last child even when node of kind has been found.
  * @return all nodes that satisfy the type guard, or [] if none is found
  */
-export declare function findNodes<T extends ts.Node>(node: ts.Node, guard: (node: ts.Node) => node is T, max?: number, recursive?: boolean): T[];
+export declare function findNodes<T extends ts.Node>(
+	node: ts.Node,
+	guard: (node: ts.Node) => node is T,
+	max?: number,
+	recursive?: boolean
+): T[];
 /**
  * Get all the nodes from a source.
  * @param sourceFile The source file object.
@@ -58,31 +69,71 @@ export declare function findNode(node: ts.Node, kind: ts.SyntaxKind, text: strin
  * @return Change instance
  * @throw Error if toInsert is first occurence but fall back is not set
  */
-export declare function insertAfterLastOccurrence(nodes: ts.Node[], toInsert: string, file: string, fallbackPos: number, syntaxKind?: ts.SyntaxKind): Change;
+export declare function insertAfterLastOccurrence(
+	nodes: ts.Node[],
+	toInsert: string,
+	file: string,
+	fallbackPos: number,
+	syntaxKind?: ts.SyntaxKind
+): Change;
 export declare function getDecoratorMetadata(source: ts.SourceFile, identifier: string, module: string): ts.Node[];
-export declare function getMetadataField(node: ts.ObjectLiteralExpression, metadataField: string): ts.ObjectLiteralElement[];
-export declare function addSymbolToNgModuleMetadata(source: ts.SourceFile, ngModulePath: string, metadataField: string, symbolName: string, importPath?: string | null): Change[];
+export declare function getMetadataField(
+	node: ts.ObjectLiteralExpression,
+	metadataField: string
+): ts.ObjectLiteralElement[];
+export declare function addSymbolToNgModuleMetadata(
+	source: ts.SourceFile,
+	ngModulePath: string,
+	metadataField: string,
+	symbolName: string,
+	importPath?: string | null
+): Change[];
 /**
  * Custom function to insert a declaration (component, pipe, directive)
  * into NgModule declarations. It also imports the component.
  */
-export declare function addDeclarationToModule(source: ts.SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
+export declare function addDeclarationToModule(
+	source: ts.SourceFile,
+	modulePath: string,
+	classifiedName: string,
+	importPath: string
+): Change[];
 /**
  * Custom function to insert an NgModule into NgModule imports. It also imports the module.
  */
-export declare function addImportToModule(source: ts.SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
+export declare function addImportToModule(
+	source: ts.SourceFile,
+	modulePath: string,
+	classifiedName: string,
+	importPath: string
+): Change[];
 /**
  * Custom function to insert a provider into NgModule. It also imports it.
  */
-export declare function addProviderToModule(source: ts.SourceFile, modulePath: string, classifiedName: string, importPath: string | null): Change[];
+export declare function addProviderToModule(
+	source: ts.SourceFile,
+	modulePath: string,
+	classifiedName: string,
+	importPath: string | null
+): Change[];
 /**
  * Custom function to insert an export into NgModule. It also imports it.
  */
-export declare function addExportToModule(source: ts.SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
+export declare function addExportToModule(
+	source: ts.SourceFile,
+	modulePath: string,
+	classifiedName: string,
+	importPath: string
+): Change[];
 /**
  * Custom function to insert an export into NgModule. It also imports it.
  */
-export declare function addBootstrapToModule(source: ts.SourceFile, modulePath: string, classifiedName: string, importPath: string): Change[];
+export declare function addBootstrapToModule(
+	source: ts.SourceFile,
+	modulePath: string,
+	classifiedName: string,
+	importPath: string
+): Change[];
 /**
  * Determine if an import already exists.
  */
@@ -96,7 +147,11 @@ export declare function getEnvironmentExportName(source: ts.SourceFile): string 
 /**
  * Adds a new layout route declaration to a router module (i.e. has a RouterModule declaration)
  */
-export declare function addFeatureRouteForLayout(source: ts.SourceFile, fileToAdd: string, constantLiteral: string): Change | undefined;
+export declare function addFeatureRouteForLayout(
+	source: ts.SourceFile,
+	fileToAdd: string,
+	constantLiteral: string
+): Change | undefined;
 /**
  * Returns the RouterModule declaration from NgModule metadata, if any.
  */
@@ -104,11 +159,21 @@ export declare function getRouterModuleDeclaration(source: ts.SourceFile): ts.Ex
 /**
  * Adds a redirectTo route declaration
  */
-export declare function addRedirectRouteDeclarationToModule(source: ts.SourceFile, fileToAdd: string, routesName: string, routeLiteral: string): Change | undefined;
+export declare function addRedirectRouteDeclarationToModule(
+	source: ts.SourceFile,
+	fileToAdd: string,
+	routesName: string,
+	routeLiteral: string
+): Change | undefined;
 /**
  * Adds a new route declaration to a router module (i.e. has a RouterModule declaration)
  */
-export declare function addRouteDeclarationToModule(source: ts.SourceFile, fileToAdd: string, routesName: string, routeLiteral: string): Change | undefined;
+export declare function addRouteDeclarationToModule(
+	source: ts.SourceFile,
+	fileToAdd: string,
+	routesName: string,
+	routeLiteral: string
+): Change | undefined;
 /**
  * Returns the StoreModule declaration from NgModule metadata, if any.
  */
@@ -116,4 +181,8 @@ export declare function getStoreModuleDeclaration(source: ts.SourceFile): ts.Exp
 /**
  * Adds a new state declaration to a router module (i.e. has a StoreModule declaration)
  */
-export declare function addStateDeclarationToModule(source: ts.SourceFile, fileToAdd: string, reducerLiteral: string): Change[];
+export declare function addStateDeclarationToModule(
+	source: ts.SourceFile,
+	fileToAdd: string,
+	reducerLiteral: string
+): Change[];
