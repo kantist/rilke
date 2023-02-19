@@ -29,12 +29,27 @@ jobs:
                   node-version: 18
             - run: npm install
             - run: npm run build:ui
-            - run: npm run build:schematics
+            - run: npm run build:schematics:ui
             - uses: JS-DevTools/npm-publish@v1
               with:
                   token: ${{ secrets.NPM_TOKEN }}
                   access: public
                   package: ./dist/ui/package.json
+    store:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 18
+            - run: npm install
+            - run: npm run build:store
+            - run: npm run build:schematics:store
+            - uses: JS-DevTools/npm-publish@v1
+              with:
+                  token: ${{ secrets.NPM_TOKEN }}
+                  access: public
+                  package: ./dist/store/package.json
     # cdk:
     #     runs-on: ubuntu-latest
     #     steps:
