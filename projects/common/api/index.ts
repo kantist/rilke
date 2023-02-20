@@ -9,5 +9,3 @@
 export * from './api.service';
 export * from './api.model';
 export * from './injections';
-export * from './interceptors/jwt.interceptor';
-export * from './interceptors/session.interceptor';
