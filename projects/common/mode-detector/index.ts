@@ -6,5 +6,4 @@
  * found in the LICENSE file at https://rilke.ist/license
  */
 
-export * from './auth.service';
-export * from './injections';
+export * from './mode-detector.service';

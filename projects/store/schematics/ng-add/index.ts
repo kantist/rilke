@@ -83,8 +83,8 @@ function addAppStoreModule(mainPath: string): Rule {
 			throw new SchematicsException(`App Module not found`);
 		}
 
-		const relativePath = '@stores/app.store';
-		const classifiedName = 'AppStore';
+		const relativePath = '@stores/app-store.module';
+		const classifiedName = 'AppStoreModule';
 		const importChanges = addImportToModule(source, modulePath, classifiedName, relativePath);
 
 		const importRecorder = host.beginUpdate(modulePath);

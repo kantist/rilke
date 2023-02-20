@@ -6,6 +6,4 @@
  * found in the LICENSE file at https://rilke.ist/license
  */
 
-import { InjectionToken } from '@angular/core';
-
-export const TOKEN_KEY: InjectionToken<string> = new InjectionToken('bearerToken');
+export * from './location.service';

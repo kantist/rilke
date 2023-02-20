@@ -9,4 +9,4 @@ export const metaReducers = environment.production ? [] : [];
 @NgModule({
 	imports: [StoreModule.forRoot({}, { metaReducers }), EffectsModule.forRoot([])],
 })
-export class AppStore {}
+export class AppStoreModule {}

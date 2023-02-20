@@ -9,5 +9,6 @@
 export default {};
 // export * from './api';
 // export * from './auth';
-// export * from './seo';
+// export * from './location';
+// export * from './mode-detector';
 // export * from './utility';

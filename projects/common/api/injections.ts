@@ -9,3 +9,5 @@
 import { InjectionToken } from '@angular/core';
 
 export const API_URL: InjectionToken<string> = new InjectionToken(null);
+export const API_RETRY: InjectionToken<number> = new InjectionToken('3');
+export const API_DELAY: InjectionToken<number> = new InjectionToken('500');

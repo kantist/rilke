@@ -11,14 +11,19 @@ import { Inject, Injectable } from '@angular/core';
 
 import { ApiCall, IApiCall } from './api.model';
 import { throwError } from 'rxjs';
-import { catchError, tap } from 'rxjs/operators';
-import { API_URL } from './injections';
+import { catchError, delay, retry, tap } from 'rxjs/operators';
+import { API_DELAY, API_RETRY, API_URL } from './injections';
 
 @Injectable({
 	providedIn: 'root',
 })
 export class ApiService {
-	constructor(private http: HttpClient, @Inject(API_URL) private apiUrl?: string) {}
+	constructor(
+		private http: HttpClient,
+		@Inject(API_URL) private apiUrl?: string,
+		@Inject(API_RETRY) private apiRetry?: number,
+		@Inject(API_DELAY) private apiDelay?: number
+	) {}
 
 	get(apiCall: IApiCall) {
 		apiCall = this.setApiCall(apiCall);
@@ -26,6 +31,8 @@ export class ApiService {
 		const url = apiCall.getFullPath();
 
 		return this.http.get(url, apiCall.options).pipe(
+			retry(this.apiRetry),
+			delay(this.apiDelay),
 			tap((res: any) => res),
 			catchError(this.handleError)
 		);
@@ -37,6 +44,8 @@ export class ApiService {
 		const url = apiCall.getFullPath();
 
 		return this.http.post(url, apiCall.body, apiCall.options).pipe(
+			retry(this.apiRetry),
+			delay(this.apiDelay),
 			tap((res: any) => res),
 			catchError(this.handleError)
 		);
@@ -48,6 +57,8 @@ export class ApiService {
 		const url = apiCall.getFullPath();
 
 		return this.http.patch(url, apiCall.body, apiCall.options).pipe(
+			retry(this.apiRetry),
+			delay(this.apiDelay),
 			tap((res: any) => res),
 			catchError(this.handleError)
 		);
@@ -59,6 +70,8 @@ export class ApiService {
 		const url = apiCall.getFullPath();
 
 		return this.http.delete(url, apiCall.options).pipe(
+			retry(this.apiRetry),
+			delay(this.apiDelay),
 			tap((res: any) => res),
 			catchError(this.handleError)
 		);
@@ -70,6 +83,8 @@ export class ApiService {
 		const url = apiCall.getFullPath();
 
 		return this.http.options(url, apiCall.options).pipe(
+			retry(this.apiRetry),
+			delay(this.apiDelay),
 			tap((res: any) => res),
 			catchError(this.handleError)
 		);
@@ -81,6 +96,8 @@ export class ApiService {
 		const url = apiCall.getFullPath();
 
 		return this.http.head(url, apiCall.options).pipe(
+			retry(this.apiRetry),
+			delay(this.apiDelay),
 			tap((res: any) => res),
 			catchError(this.handleError)
 		);

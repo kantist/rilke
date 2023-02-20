@@ -8,16 +8,16 @@
 
 import { TestBed, inject } from '@angular/core/testing';
 
-import { AuthService } from './auth.service';
+import { LocationService } from './location.service';
 
-describe('AuthService', () => {
+describe('LocationService', () => {
 	beforeEach(() => {
 		TestBed.configureTestingModule({
-			providers: [AuthService],
+			providers: [LocationService],
 		});
 	});
 
-	it('should be created', inject([AuthService], (service: AuthService) => {
+	it('should be created', inject([LocationService], (service: LocationService) => {
 		expect(service).toBeTruthy();
 	}));
 });
