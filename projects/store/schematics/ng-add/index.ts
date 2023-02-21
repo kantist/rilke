@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://rilke.ist/license
  */
 
-import { strings, normalize } from '@angular-devkit/core';
+import { strings } from '@angular-devkit/core';
 import {
 	Rule,
 	MergeStrategy,
@@ -24,7 +24,7 @@ import {
 import { NodePackageInstallTask } from '@angular-devkit/schematics/tasks';
 import { addImportToModule } from '../utility/ast-utils';
 import { InsertChange } from '../utility/change';
-import { getWorkspace } from '../utility/workspace';
+import { buildDefaultPath, getWorkspace } from '../utility/workspace';
 import { getAppModulePath } from '../utility/ng-ast-utils';
 import * as ts from '../third_party/files/typescript';
 import { targetBuildNotFoundError } from '../utility/project-targets';
@@ -114,10 +114,7 @@ export default function (options: Schema): Rule {
 		}
 		const buildOptions = (buildTarget.options || {}) as unknown as BrowserBuilderOptions;
 
-		const newProjectRoot = (workspace.extensions.newProjectRoot as string | undefined) || '';
-
-		const appDir = normalize(newProjectRoot);
-		const sourceDir = `${appDir}/src/app`;
+		const sourceDir = buildDefaultPath(project); // src/app/
 
 		return chain([
 			addAppStoreModule(buildOptions.main),
