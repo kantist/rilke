@@ -1,6 +1,6 @@
 {
 	"name": "@rilke/store",
-	"version": "15.1.4",
+	"version": "15.1.5",
 	"description": "Rilke State Management Library",
 	"scripts": {
 		"build": "tsc -p tsconfig.schematics.json",

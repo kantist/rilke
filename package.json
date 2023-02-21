@@ -28,7 +28,8 @@
 		"lint:styles:fix": "stylelint \"**/*.scss\" --fix",
 		"*** SCHEMATICS ***": "",
 		"build:schematics:ui": "cd projects/ui && npm run build",
-		"build:schematics:store": "cd projects/store && npm run build"
+		"build:schematics:store": "cd projects/store && npm run build",
+		"test:store": "npm run build:store && npm run build:schematics:store && cd dist/store && npm link"
 	},
 	"dependencies": {
 		"@angular/animations": "~15.1.4",
@@ -46,6 +47,7 @@
 		"ngx-color": "^7.3.3",
 		"rxjs": "7.5.5",
 		"tslib": "2.4.0",
+		"jsonc-parser": "3.2.0",
 		"zone.js": "~0.11.4"
 	},
 	"devDependencies": {

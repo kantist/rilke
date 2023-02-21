@@ -50,17 +50,17 @@ function addDependenciesToPackageJson(options: Schema) {
 			{
 				type: NodeDependencyType.Default,
 				name: '@ngrx/effects',
-				version: latestVersions['@ngrx'],
+				version: latestVersions.Ngrx,
 			},
 			{
 				type: NodeDependencyType.Default,
 				name: '@ngrx/entity',
-				version: latestVersions['@ngrx'],
+				version: latestVersions.Ngrx,
 			},
 			{
 				type: NodeDependencyType.Default,
 				name: '@ngrx/store',
-				version: latestVersions['@ngrx'],
+				version: latestVersions.Ngrx,
 			},
 		].forEach((dependency) => addPackageJsonDependency(host, dependency));
 

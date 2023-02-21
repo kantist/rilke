@@ -36,6 +36,7 @@ export function addPackageJsonDependency(tree: Tree, dependency: NodeDependency,
 
 	const { overwrite, type, name, version } = dependency;
 	const path = [type, name];
+
 	if (overwrite || !json.get(path)) {
 		json.modify(path, version);
 	}
