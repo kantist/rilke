@@ -1,6 +1,6 @@
 {
 	"name": "@rilke/store",
-	"version": "15.1.1",
+	"version": "15.1.2",
 	"description": "Rilke State Management Library",
 	"scripts": {
 		"build": "tsc -p tsconfig.schematics.json",
@@ -40,5 +40,7 @@
 		"tslib": "2.4.0",
 		"copyfiles": "file:../../node_modules/copyfiles",
 		"typescript": "file:../../node_modules/typescript"
-	}
+	},
+	"schematics": "./schematics/collection.json",
+	"ng-add": {}
 }
