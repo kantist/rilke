@@ -48,17 +48,17 @@ function addDependenciesToPackageJson(options: Schema) {
 	return (host: Tree, context: SchematicContext) => {
 		[
 			{
-				type: NodeDependencyType.Dev,
+				type: NodeDependencyType.Default,
 				name: '@ngrx/effects',
 				version: latestVersions['@ngrx'],
 			},
 			{
-				type: NodeDependencyType.Dev,
+				type: NodeDependencyType.Default,
 				name: '@ngrx/entity',
 				version: latestVersions['@ngrx'],
 			},
 			{
-				type: NodeDependencyType.Dev,
+				type: NodeDependencyType.Default,
 				name: '@ngrx/store',
 				version: latestVersions['@ngrx'],
 			},
@@ -118,7 +118,6 @@ export default function (options: Schema): Rule {
 
 		return chain([
 			addAppStoreModule(buildOptions.main),
-			addDependenciesToPackageJson(options),
 			mergeWith(
 				apply(url('./files'), [
 					noop(),
@@ -130,6 +129,7 @@ export default function (options: Schema): Rule {
 				]),
 				MergeStrategy.Overwrite
 			),
+			addDependenciesToPackageJson(options),
 		]);
 	};
 }
