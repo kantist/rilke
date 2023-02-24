@@ -40,7 +40,6 @@
 		"paths": {
 			"@rilke/common/*": ["projects/common/*", "projects/common"],
 			"@rilke/ui/*": ["projects/ui/*", "projects/ui"],
-			"@rilke/cdk/*": ["projects/cdk/*", "projects/cdk"],
 			"@rilke/store/*": ["projects/store/*", "projects/store"]
 		}
 	},
