@@ -11,5 +11,5 @@ export const latestVersions: Record<string, string> & {
 	Ngrx: string;
 } = {
 	RilkeStore: '' + require('../../package.json')['version'],
-	Ngrx: '~15.3.0',
+	Ngrx: '~16.0.0',
 };
