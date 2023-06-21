@@ -3,5 +3,6 @@
 	"dest": "../../dist/common",
 	"lib": {
 		"entryFile": "index.ts"
-	}
+	},
+	"allowedNonPeerDependencies": ["uuid"]
 }

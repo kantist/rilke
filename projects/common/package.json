@@ -1,6 +1,6 @@
 {
 	"name": "@rilke/common",
-	"version": "16.0.0",
+	"version": "16.0.1",
 	"description": "Rilke Common Library",
 	"keywords": [
 		"angular",
@@ -21,6 +21,7 @@
 		"url": "https://github.com/kantist/rilke.git"
 	},
 	"dependencies": {
+		"uuid": "9.0.0",
 		"tslib": "2.4.0"
 	},
 	"peerDependencies": {

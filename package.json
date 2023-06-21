@@ -42,10 +42,11 @@
 		"@angular/router": "~15.1.4",
 		"copyfiles": "^2.4.1",
 		"eslint-plugin-header": "^3.1.1",
+		"jsonc-parser": "3.2.0",
 		"ngx-color": "^7.3.3",
 		"rxjs": "7.5.5",
 		"tslib": "2.4.0",
-		"jsonc-parser": "3.2.0",
+		"uuid": "9.0.0",
 		"zone.js": "~0.11.4"
 	},
 	"devDependencies": {
