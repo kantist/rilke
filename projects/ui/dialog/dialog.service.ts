@@ -17,9 +17,7 @@ export class RilDialogService {
 	constructor(private dialog: MatDialog) {}
 
 	show(config: MatDialogConfig) {
-		const dialogRef = this.dialog.open(RilDialog, {
-			data: config.data,
-		});
+		const dialogRef = this.dialog.open(RilDialog, config);
 
 		return dialogRef.componentInstance.onResults.pipe(tap((res: any) => res));
 	}
