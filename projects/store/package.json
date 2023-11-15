@@ -1,6 +1,6 @@
 {
 	"name": "@rilke/store",
-	"version": "16.0.0",
+	"version": "17.0.0",
 	"description": "Rilke State Management Library",
 	"scripts": {
 		"build": "tsc -p tsconfig.schematics.json",
@@ -31,12 +31,12 @@
 		"tslib": "2.4.0"
 	},
 	"peerDependencies": {
-		"@angular/core": "16.0.2",
-		"@angular/common": "16.0.2"
+		"@angular/core": "17.0.0",
+		"@angular/common": "17.0.0"
 	},
 	"devDependencies": {
-		"@angular/core": "16.0.2",
-		"@angular/common": "16.0.2",
+		"@angular/core": "17.0.0",
+		"@angular/common": "17.0.0",
 		"tslib": "2.4.0",
 		"copyfiles": "file:../../node_modules/copyfiles",
 		"typescript": "file:../../node_modules/typescript"
