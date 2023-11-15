@@ -1,6 +1,6 @@
 {
 	"name": "@rilke/common",
-	"version": "17.0.0",
+	"version": "17.0.1",
 	"description": "Rilke Common Library",
 	"keywords": [
 		"angular",
@@ -25,12 +25,12 @@
 		"tslib": "2.4.0"
 	},
 	"peerDependencies": {
-		"@angular/core": "17.0.0",
-		"@angular/common": "17.0.0"
+		"@angular/core": "~17",
+		"@angular/common": "~17"
 	},
 	"devDependencies": {
-		"@angular/core": "17.0.0",
-		"@angular/common": "17.0.0",
+		"@angular/core": "~17",
+		"@angular/common": "~17",
 		"tslib": "2.4.0"
 	}
 }
