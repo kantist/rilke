@@ -53,6 +53,17 @@ export class ApiService {
 		);
 	}
 
+	put(apiCall: IApiCall) {
+		apiCall = this.setApiCall(apiCall);
+
+		const url = apiCall.getFullPath();
+
+		return this.http.put(url, apiCall.body, apiCall.options).pipe(
+			tap((res: any) => res),
+			catchError(this.handleError)
+		);
+	}
+
 	delete(apiCall: IApiCall) {
 		apiCall = this.setApiCall(apiCall);
 
