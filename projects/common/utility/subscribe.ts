@@ -16,9 +16,9 @@ const doUnsubscribe = (subscription) => {
 };
 
 const doUnsubscribeIfArray = (subscriptionsArray) => {
-	if (Array.isArray(subscriptionsArray)) {
+	if (Array.isArray(subscriptionsArray) && subscriptionsArray.length > 0) {
 		for (let sub of subscriptionsArray) {
-			if (!isFunction(sub.unsubscribe)) break; // if one of the elements is not a subscription, break the loop
+			if (!isFunction(sub?.unsubscribe)) break; // if one of the elements is not a subscription, break the loop
 
 			doUnsubscribe(sub);
 		}
